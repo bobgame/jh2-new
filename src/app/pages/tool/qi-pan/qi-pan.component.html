@@ -1,0 +1,35 @@
+<div class="cards-con" (click)="closeResult()">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ '对弈' }}</div>
+    </div>
+  </div>
+  <div class="dl-con">
+    <div class="top-show">
+      <div class="first">
+        <div class="color-text" (click)="qiPan.blackFirst = !qiPan.blackFirst">{{ qiPan.blackFirst ? '黑' : '白' }}</div>
+        <div>先</div>
+        <div class="kill-text" (click)="qiPan.isKill = !qiPan.isKill">{{ qiPan.isKill ? '杀' : '活' }}</div>
+      </div>
+      <div class="arrow-con">
+        <button class="label" (click)="setKey()">设Key</button>
+        <button class="label" (click)="checkResult()">生成</button>
+      </div>
+    </div>
+    <div class="dl-control-con">
+      <div
+        class="dl-control-item img-x-{{ qzItem.x }} img-y-{{ qzItem.y }}"
+        *ngFor="let qzItem of gzList"
+        (click)="qiClick(qzItem)"
+        [class.is-key]="qiPan.key[0] === qzItem.x && qiPan.key[1] === qzItem.y">
+        <div class="img-con img-qz-{{ qzItem.qz }} "></div>
+      </div>
+      <!-- <div class="qz-pos-con" [style.left.px]="14 + 27 * activeGz.x" [style.top.px]="14 + 27 * activeGz.y">
+        <div class="qz-pos"></div>
+      </div> -->
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showQiResult" (click)="closeResult()">
+    {{ result ? '对了' : '错了' }}
+  </div>
+</div>

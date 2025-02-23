@@ -1,0 +1,111 @@
+@import '../../../app.theme.scss';
+
+.cards-con {
+  margin: 31px 20px;
+  width: 360px;
+  height: 410px;
+
+  .title-contain {
+    border: 3px solid $borderColor;
+    width: 360px;
+    height: 64px;
+    padding: 5px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+
+    .title-con {
+      width: 344px;
+      height: 48px;
+      background-image: url('/assets/images/choose/choose-title-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      padding-bottom: 8px;
+      color: $titleColor;
+      position: relative;
+
+      .close-con {
+        position: absolute;
+        right: 25px;
+        top: 4px;
+        background-color: antiquewhite;
+      }
+    }
+  }
+
+  .dl-con {
+    padding-top: 30px;
+
+    .dl-control-con {
+      position: relative;
+      width: 368px;
+      height: 207px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .dl-control-item {
+        width: 92px;
+        height: 69px;
+
+        .img-con {
+          width: 100%;
+          height: 100%;
+          background-size: 100% 100%;
+          position: relative;
+
+          &.is-active {
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              $borderWidth: 4px;
+              width: calc(100% - #{$borderWidth * 2});
+              height: calc(100% - #{$borderWidth * 2});
+              border: $borderWidth solid #00ff01;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-show {
+      position: relative;
+
+      .arrow-con {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .result-con {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid $borderColor;
+    width: 160px;
+    height: 50px;
+    padding: 5px;
+    font-size: 24px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}

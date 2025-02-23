@@ -1,0 +1,97 @@
+@import '../../app.theme.scss';
+
+.cards-con {
+  margin: 31px 20px;
+  width: 360px;
+  height: 410px;
+
+  .title-contain {
+    border: 3px solid $borderColor;
+    width: 360px;
+    height: 64px;
+    padding: 5px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+
+    .title-con {
+      width: 344px;
+      height: 48px;
+      background-image: url('/assets/images/choose/choose-title-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      padding-bottom: 8px;
+      color: $titleColor;
+      position: relative;
+
+      .back-con {
+        position: absolute;
+        left: 25px;
+        top: 4px;
+        background-color: antiquewhite;
+      }
+    }
+  }
+
+  ::ng-deep {
+
+    .scrollbar {
+      background-color: rgba(198, 176, 152, 0.669);
+      border-radius: 4px;
+      width: 8px !important;
+    }
+
+    .scrollbar-thumb {
+      background-color: #e7cfb7;
+      border: 2px solid #977c51;
+    }
+
+    .scrollbar-control {
+      justify-content: flex-end;
+    }
+  }
+
+  .help-con {
+    width: 100%;
+    padding: 6px 10px 0px 6px;
+
+    h3,
+    p {
+      margin: 0;
+
+      b {
+        font-weight: bold;
+        color: red;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      color: $titleColor;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    hr {
+      // background-color: #333;
+      // box-shadow: 0 1px 0 0 #ccaa80;
+      border-color: #ccc;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #0773ac;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+}

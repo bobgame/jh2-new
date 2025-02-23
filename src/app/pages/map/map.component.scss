@@ -1,0 +1,217 @@
+@import '../../app.theme.scss';
+
+.map-con {
+  width: 100%;
+  height: 100%;
+  background: #000;
+
+  .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+
+  .map-drag-con {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+
+
+    .map-title {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 82px;
+      height: 43px;
+      background-image: url('/assets/images/map/map-title-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    }
+
+    .map-arrow {
+      position: absolute;
+      top: 275px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      background-image: url('/assets/images/map/btn-arrow-left.png');
+      background-size: 100% 100%;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba($color: #fff, $alpha: 0.5);
+      }
+
+      &.arrow-right {
+        left: auto;
+        right: 10px;
+        transform: rotate(180deg);
+      }
+    }
+
+    .map-drag {
+      width: 572px;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      // left: -172px;
+      top: 0;
+      background-image: url('/assets/images/map/map-bg.png');
+      background-size: 100% 100%;
+      transition: left 0.3s ease-in-out;
+    }
+
+    .map-city-img-con {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      .map-city-img {
+        width: 2px;
+        height: 2px;
+        position: absolute;
+        margin-left: -1px;
+        margin-top: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .map-img {
+          &.is-reverse {
+            transform: rotateY(180deg);
+          }
+
+          &.map-img-city-1 {
+            width: 48px;
+            height: 43px;
+          }
+
+          &.map-img-city-2 {
+            width: 48px;
+            height: 41px;
+          }
+
+          &.map-img-city-3 {
+            width: 54px;
+            height: 45px;
+          }
+
+          &.map-img-mountain-1 {
+            width: 41px;
+            height: 36px;
+          }
+
+          &.map-img-mountain-2 {
+            width: 41px;
+            height: 39px;
+          }
+
+          &.map-img-mountain-3 {
+            width: 39px;
+            height: 41px;
+          }
+
+          &.map-img-mountain-4 {
+            width: 54px;
+            height: 39px;
+          }
+        }
+      }
+    }
+
+    .map-cities {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      .map-city {
+        $mapCityWidth: 42px;
+        position: absolute;
+        z-index: 1;
+        width: $mapCityWidth;
+        height: $mapCityWidth;
+        margin-left: calc(#{$mapCityWidth} / -2);
+        margin-top: calc(#{$mapCityWidth} / -2);
+        // background-color: rgba(14, 176, 176, 0.299);
+        cursor: pointer;
+
+        &.current-city {
+          z-index: 2;
+        }
+
+      }
+    }
+
+
+    .map-pos-con {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      width: 34px;
+      height: 73px;
+      // background-color: aqua;
+      overflow: hidden;
+
+      .map-pos {
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        width: 140px;
+        height: 145px;
+        background-image: url('/assets/images/map/map-pos.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        animation: switchMapPosImage 1s steps(2) infinite;
+
+        &.is-flash {
+          animation: switchMapPosImage 0.3s steps(2) infinite;
+        }
+      }
+
+      @keyframes switchMapPosImage {
+        0% {
+          transform: scale(0.5) translate(0, 0);
+        }
+
+        100% {
+          transform: scale(0.5) translate(-144px, 0);
+        }
+
+      }
+    }
+  }
+
+  .map-toast {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid $borderColor;
+    padding: 0 20px;
+    height: 50px;
+    padding: 5px;
+    font-size: 24px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

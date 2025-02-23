@@ -1,0 +1,30 @@
+<jh-ui-frame [pageTitle]="g.current.page === PageEnum.Home ? '继续' : '保存'" [showClose]="true" (closeFrame)="close()">
+  <ng-scrollbar style="height: 380px" trackClass="scrollbar" viewClass="scrollbar-view" thumbClass="scrollbar-thumb">
+    <div class="sl-list">
+      <div
+        class="sl-item"
+        [class.selected]="g.current.page !== PageEnum.Home && select.index === i"
+        *ngFor="let item of slItems; let i = index"
+        (click)="selectSl(i)">
+        <div class="avatar" [style.backgroundImage]="'url(/assets/images/avatar/zj/zj-' + item.avatar + '.png)'"></div>
+        <div class="name">{{ item.name }}</div>
+        <div class="pos">{{ item.pos }}</div>
+        <div class="time">{{ item.time | showTime }}</div>
+      </div>
+      <div
+        class="sl-item sl-new"
+        [class.selected]="select.index === slItems.length"
+        *ngIf="g.current.page !== PageEnum.Home && slItems.length < 6"
+        (click)="newSl()">
+        无存档
+      </div>
+      <div class="sl-item sl-new" *ngIf="g.current.page === PageEnum.Home && slItems.length === 0">无存档</div>
+      <!-- <div class="sl-item sl-new">无存档</div>
+      <div class="sl-item sl-new">无存档</div>
+      <div class="sl-item sl-new">无存档</div>
+      <div class="sl-item sl-new">无存档</div>
+      <div class="sl-item sl-new">无存档</div> -->
+    </div>
+  </ng-scrollbar>
+</jh-ui-frame>
+<jh-pop-choose *ngIf="showQa" [title]="qa.question" [answers]="qa.answers" (itemClick)="answer($event)"></jh-pop-choose>

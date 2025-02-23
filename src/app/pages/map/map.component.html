@@ -1,0 +1,35 @@
+<div class="map-con">
+  <div class="map-drag-con" id="map-drag-con">
+    <div class="map-drag" id="map-drag" [ngStyle]="{ 'left.px': m.mapDragLeft }">
+      <div class="map-city-img-con">
+        <div class="map-city-img" [ngStyle]="{ 'left.px': mapCity.left, 'top.px': mapCity.top }" *ngFor="let mapCity of m.mapCities">
+          <img
+            *ngIf="mapCity.img"
+            class="map-img map-img-{{ mapCity.img }}"
+            [class.is-reverse]="mapCity.imgReverse"
+            [src]="'assets/images/map/map-' + mapCity.img + '.png'" />
+        </div>
+      </div>
+      <div class="map-pos-con" [ngStyle]="{ 'left.px': m.currentCity.left - 17, 'top.px': m.currentCity.top - 49 }">
+        <div class="map-pos" [class.is-flash]="g.show.mapPosFlash"></div>
+      </div>
+      <div class="map-cities">
+        <div
+          class="map-city"
+          [class.current-city]="m.currentCity.id === mapCity.id"
+          [ngStyle]="{ 'left.px': mapCity.left, 'top.px': mapCity.top }"
+          *ngFor="let mapCity of m.mapCities"
+          (click)="selectCity(mapCity)">
+          <!-- {{mapCity.name}} -->
+        </div>
+      </div>
+    </div>
+    <div class="map-title">
+      {{ m.currentCity.name }}
+    </div>
+    <div *ngIf="m.isShowLeftSide" class="map-arrow arrow-left" (click)="arrowClicked(true)"></div>
+    <div *ngIf="!m.isShowLeftSide" class="map-arrow arrow-right" (click)="arrowClicked(false)"></div>
+  </div>
+  <div class="mask" *ngIf="m.mapMask"></div>
+  <div class="map-toast" *ngIf="m.mapToast.show">{{ m.mapToast.text }}</div>
+</div>

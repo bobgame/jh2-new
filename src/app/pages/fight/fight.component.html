@@ -1,0 +1,82 @@
+<jh-pop-talk-ft *ngIf="talkData.show" [talkData]="talkData" (closePop)="closeTalk()"></jh-pop-talk-ft>
+<div class="fight-con" *ngIf="!talkData.show">
+  <div class="npc-con">
+    <div class="card-list">
+      <div class="card-item" *ngFor="let nCard of npcFight.cards"></div>
+    </div>
+    <div class="npc-avatar" [style.backgroundImage]="'url(/assets/images/avatar/rw/rw-' + npcFight.avatar + '.png)'"></div>
+    <div class="hp-con">
+      <!-- <div class="num">{{ npcFight.tl }}/{{ npcFight.tlM }}</div> -->
+      <div class="num">
+        <span class="num" [countUp]="npcFight.tl" [options]="countOptionsNpc"></span>
+        <span>/</span>
+        <span>{{ npcFight.tlM }}</span>
+      </div>
+      <div class="line">
+        <div class="hp-line" [style.width.%]="(npcFight.tl * 100) / npcFight.tlM"></div>
+      </div>
+    </div>
+    <div class="mj-con" *ngIf="npcFight.useMj.count > 0">
+      <div class="mj-name">{{ npcFight.useMj.name }}</div>
+      <div class="mj-img" [style.backgroundImage]="'url(/assets/images/avatar/mj/mj-' + npcFight.useMj.id + '.png)'"></div>
+    </div>
+  </div>
+  <div class="fight-img-con">
+    <div class="fight-bg fight-bg-1"></div>
+    <div class="img-container hero-fight-con hero-fight-con-{{ heroFight.sex }}" [ngSwitch]="fightStatus.hero">
+      <div class="status status-normal" *ngSwitchCase="FightStatusEnum.Normal"></div>
+      <div class="status status-attack" *ngSwitchCase="FightStatusEnum.Attack"></div>
+      <div class="status status-injured" *ngSwitchCase="FightStatusEnum.Injured"></div>
+    </div>
+    <div class="img-container npc-fight-con npc-fight-con-{{ npcFight.sex }}" [ngSwitch]="fightStatus.npc">
+      <div class="status status-normal" *ngSwitchCase="FightStatusEnum.Normal"></div>
+      <div class="status status-attack" *ngSwitchCase="FightStatusEnum.Attack"></div>
+      <div class="status status-injured" *ngSwitchCase="FightStatusEnum.Injured"></div>
+    </div>
+    <div class="fight-anim-point" [class.hero-attack]="ftData.hero.attack" [class.npc-attack]="ftData.npc.attack"></div>
+  </div>
+  <div class="npc-con hero-con">
+    <div class="mj-con" *ngIf="heroFight.useMj.count > 0">
+      <div class="mj-name">{{ heroFight.useMj.name }}</div>
+      <div class="mj-img" [style.backgroundImage]="'url(/assets/images/avatar/mj/mj-' + heroFight.useMj.id + '.png)'"></div>
+    </div>
+    <div class="hp-con">
+      <!-- <div class="num">{{ heroFight.tl }}/{{ heroFight.tlM }}</div> -->
+      <div class="num">
+        <span class="num" [countUp]="heroFight.tl" [options]="countOptionsHero"></span>
+        <span>/</span>
+        <span>{{ heroFight.tlM }}</span>
+      </div>
+
+      <div class="line">
+        <div class="hp-line" [style.width.%]="(heroFight.tl * 100) / heroFight.tlM"></div>
+      </div>
+    </div>
+    <div class="card-list font-cn" *ngIf="!isFighting">
+      <div class="card-item-con" *ngFor="let cardId of heroFight.cards; let i = index">
+        <jh-ui-ft-card
+          [cardId]="cardId"
+          [cardIndex]="i"
+          [ftImg]="ftImg"
+          [isSelected]="heroFight.choose.includes(i)"
+          (click)="chooseCard(i)"></jh-ui-ft-card>
+      </div>
+    </div>
+  </div>
+  <button class="start-battle" *ngIf="!isFighting" [class.is-hidden]="!btnBattleEnable" (click)="startBattle()">出手</button>
+
+  <div class="fighting-con font-cn" [class.show]="isFighting && isFtCardAnim">
+    <div class="fighting-side npc-side" [class.anim]="!this.ftData.npc.move">
+      <div class="card-item-con" *ngFor="let cardId of ftData.npc.choose; let i = index">
+        <jh-ui-ft-card [cardId]="cardId" [cardIndex]="i" [ftImg]="ftData.npc.ftImg" (click)="chooseCard(i)"></jh-ui-ft-card>
+      </div>
+    </div>
+    <div class="fighting-side hero-side" [class.anim]="!this.ftData.hero.move">
+      <div class="card-item-con" *ngFor="let cardId of ftData.hero.choose; let i = index">
+        <jh-ui-ft-card [cardId]="cardId" [cardIndex]="i" [ftImg]="ftData.hero.ftImg" (click)="chooseCard(i)"></jh-ui-ft-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="fight-mask" *ngIf="isFighting"></div>
+</div>

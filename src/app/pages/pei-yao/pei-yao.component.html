@@ -1,0 +1,108 @@
+<jh-ui-frame pageTitle="配药">
+  <div class="pei-yao-con" *ngIf="!showPYing">
+    <div class="close-con" (click)="showExit()">
+      <jh-ui-btn-close></jh-ui-btn-close>
+    </div>
+
+    <div class="item-detail-img-text-con" *ngIf="currentItem">
+      <div class="item-detail-img" [style.backgroundColor]="'#a5a4b4'">
+        <div class="line">
+          <img class="item-img-wp" src="/assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
+        </div>
+      </div>
+      <div class="item-detail-desc" [class.is-gray]="!currentItem.canPei">
+        <div class="item-detail-desc-text">{{ currentItem.name }}</div>
+        <div class="item-detail-desc-text">作用：{{ currentItem.value >= 0 ? '+' : '' }}{{ currentItem.value }}生命</div>
+        <div class="item-detail-desc-text">数量：{{ currentItem.count }}</div>
+
+        <ng-scrollbar style="height: 60px" trackClass="scrollbar" viewClass="scrollbar-view" thumbClass="scrollbar-thumb">
+          <div class="item-detail-desc-text small">{{ currentItem.desc }}</div>
+        </ng-scrollbar>
+      </div>
+      <div class="btn-con" *ngIf="currentItem.canPei">
+        <button (click)="peiYao(currentItem)">配药</button>
+      </div>
+    </div>
+    <ng-scrollbar
+      style="position: absolute; width: 100%; height: 120px; bottom: 33px; left: 3px"
+      trackClass="scrollbar"
+      viewClass="scrollbar-view"
+      thumbClass="scrollbar-thumb">
+      <div
+        class="item-list"
+        [class.is-column-4]="ywItems.length > 18 && ywItems.length <= 24"
+        [class.is-column-5]="ywItems.length > 24 && ywItems.length <= 30"
+        [class.is-column-6]="ywItems.length > 30 && ywItems.length <= 36">
+        <div class="wp-item" *ngFor="let item of ywItems" (click)="selectItem(item)">
+          <div class="img-com" [class.is-selected]="currentItem && currentItem.id === item.id">
+            <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
+          </div>
+        </div>
+        <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
+      </div>
+    </ng-scrollbar>
+    <div class="money">
+      <div class="icon-liang"></div>
+      <div class="text">{{ g.hero.jq / 1000 | int }}</div>
+      <div class="icon-qian"></div>
+      <div class="text">{{ g.hero.jq % 1000 | int }}</div>
+    </div>
+  </div>
+  <div class="pei-yao-con" *ngIf="showPYing">
+    <div class="item-detail-img-text-con" *ngIf="currentItem">
+      <ng-scrollbar
+        style="position: absolute; width: 100%; height: 120px; top: 64px; left: 3px"
+        trackClass="scrollbar"
+        viewClass="scrollbar-view"
+        thumbClass="scrollbar-thumb"
+        *ngIf="pyData.showTop">
+        <div class="item-list">
+          <div class="wp-item" *ngFor="let itemId of topCyItemIds" (click)="removeTopCyItem(itemId)">
+            <div class="img-com">
+              <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ itemId }}.png" />
+            </div>
+          </div>
+          <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
+        </div>
+      </ng-scrollbar>
+    </div>
+    <div class="pei-yao-ing-desc">
+      <jh-ui-progress-one *ngIf="pyData.showLine"></jh-ui-progress-one>
+      <div class="desc" *ngIf="!pyData.showLine">选择草药</div>
+    </div>
+    <ng-scrollbar
+      style="position: absolute; width: 100%; height: 120px; bottom: 3px; left: 3px"
+      trackClass="scrollbar"
+      viewClass="scrollbar-view"
+      thumbClass="scrollbar-thumb"
+      *ngIf="pyData.showBottom">
+      <div class="item-list">
+        <div class="wp-item" *ngFor="let itemId of cyItems" (click)="selectCyItem(itemId)">
+          <div class="img-com">
+            <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ itemId }}.png" />
+          </div>
+        </div>
+        <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
+      </div>
+    </ng-scrollbar>
+  </div>
+  <div class="result-con" *ngIf="result.show" (click)="closeResult()">
+    <div class="result-body">
+      <div class="card-detail-img-text-con">
+        <div class="card-detail-img" [style.backgroundColor]="'#a5a4b4'">
+          <div class="line">
+            <img class="card-img-wp" src="/assets/images/avatar/wp/wp-{{ result.img }}.png" />
+          </div>
+        </div>
+        <div class="card-detail-desc">
+          <div class="card-detail-desc-text">得到：{{ result.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-con" *ngIf="toastData.showToast" (click)="closeToast()">
+    <div class="text">{{ toastData.text }}</div>
+  </div>
+</jh-ui-frame>
+
+<jh-pop-choose *ngIf="showChoose" [title]="exitQa.question" [answers]="exitQa.answers" (itemClick)="exitAnswer($event)"></jh-pop-choose>

@@ -1,0 +1,279 @@
+@import '../../../app.theme.scss';
+
+.cards-con {
+  margin: 31px 20px;
+  width: 360px;
+  height: 410px;
+
+  .title-contain {
+    position: relative;
+    border: 3px solid $borderColor;
+    width: 360px;
+    height: 64px;
+    padding: 5px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+
+    .title-con {
+      width: 344px;
+      height: 48px;
+      background-image: url('/assets/images/choose/choose-title-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      padding-bottom: 8px;
+      color: $titleColor;
+      position: relative;
+
+      .close-con {
+        position: absolute;
+        right: 25px;
+        top: 4px;
+        background-color: antiquewhite;
+      }
+    }
+  }
+
+  .qin-con {
+    padding-top: 30px;
+
+    .qin-control-con {
+      position: relative;
+      width: 364px;
+      height: 150px;
+      margin-left: -2px;
+      background-image: url('/assets/images/qin/qin-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .qin-control-item {
+        position: absolute;
+        $itemHeight: 40px;
+        height: $itemHeight;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        // background-color: rgba(0, 255, 255, 0.499);
+
+        &.qin-top {
+          top: 10px;
+          left: 6px;
+          width: 326px;
+        }
+
+        &.qin-middle {
+          top: 55px;
+          left: 10px;
+          width: 312px;
+        }
+
+        &.qin-bottom {
+          top: 100px;
+          left: 6px;
+          width: 326px;
+        }
+
+        .qin-line {
+          width: 100%;
+          height: 2px;
+          position: relative;
+          left: 0;
+          background-color: #eedaa7;
+
+          &::before,
+          &::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #eedaa7;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: -3px;
+          }
+
+          &::after {
+            left: auto;
+            right: 0;
+          }
+
+          .qin-progress {
+            width: 100%;
+            height: 2px;
+            background-color: #0000fe;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-50%);
+
+            &.is-error {
+              background-color: #fe0000;
+            }
+          }
+        }
+
+        .qin-pos {
+          width: $itemHeight;
+          height: $itemHeight;
+          position: absolute;
+          background-repeat: no-repeat;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          // background-color: #00fe0473;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          .qin-pos-icon {
+            position: relative;
+            box-sizing: border-box;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #9c110a;
+            outline: 1px solid #fe0000;
+
+            &.qin-pos-anim {
+              animation: scaleQinPos 0.3s 1 normal forwards;
+            }
+          }
+
+        }
+
+        @keyframes scaleQinPos {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+
+          95% {
+            transform: scale(1.6);
+            opacity: 1;
+          }
+
+          100% {
+            transform: scale(1.6);
+            opacity: 0;
+          }
+        }
+
+      }
+    }
+
+    .bottom-contain {
+      position: absolute;
+      top: 300px;
+      left: 25px;
+      width: 250px;
+      height: 130px;
+
+      .line {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%, 0);
+        width: 80%;
+        height: 20px;
+        border: 4px solid #2e2a45;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .progress {
+          width: 100%;
+          height: 100%;
+          background-color: #2e2a45;
+          // 渐变 72d7f3 to 176589
+          background-image: linear-gradient(to bottom, #72d7f3, #176589);
+          // transition: width 0.6s linear;
+        }
+      }
+
+      .touch-con {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translate(-50%, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+
+        .label {
+          margin-right: 5px;
+        }
+
+        .combo {
+          height: 30px;
+          width: 60px;
+          border: 2px solid #534022;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+    }
+
+    .touch-control-con {
+      position: absolute;
+      top: 300px;
+      right: 25px;
+      width: 80px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      .touch-item {
+        width: 100%;
+        height: 32%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $borderColor;
+        background-color: #fef5dd;
+        font-size: 24px;
+        color: $titleColor;
+        padding-bottom: 3px;
+        cursor: pointer;
+
+        &:active {
+          background-color: #f9e9c4;
+          color: #9c110a;
+        }
+
+        &:visited {
+          background-color: #fef5dd;
+        }
+      }
+    }
+  }
+
+  .result-con {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid $borderColor;
+    width: 160px;
+    height: 50px;
+    padding: 5px;
+    font-size: 24px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}

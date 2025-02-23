@@ -1,0 +1,38 @@
+<jh-ui-frame pageTitle="采药">
+  <div class="game-cy-con">
+    <div class="cy-list">
+      <div class="cy-item" *ngFor="let gz of gzList; let i = index" (click)="cy(i)">
+        <div
+          class="gz-con"
+          [class.is-empty]="gz.img === 'empty'"
+          [class.is-show]="gz.img !== 'not-get'"
+          [class.current]="currentGzIndex === i">
+          <div
+            *ngIf="gz.img !== 'not-get' && gz.img !== 'empty'"
+            class="img-con"
+            [style.backgroundImage]="'url(/assets/images/avatar/wp/wp-' + gz.img + '.png)'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wa-ya-wa-con" [hidden]="!inWork">
+      <div class="wa-title" *ngIf="!showCyResult">挖呀挖</div>
+      <div class="wa-line">
+        <div class="wa-progress" [style.width.%]="cyProgress"></div>
+      </div>
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showCyResult" (click)="closeResult()">
+    <div class="result-body">
+      <div class="card-detail-img-text-con">
+        <div class="card-detail-img" [style.backgroundColor]="'#a5a4b4'">
+          <div class="line">
+            <img class="card-img-wp" src="/assets/images/avatar/wp/wp-{{ result.img }}.png" />
+          </div>
+        </div>
+        <div class="card-detail-desc">
+          <div class="card-detail-desc-text">得到：{{ result.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</jh-ui-frame>

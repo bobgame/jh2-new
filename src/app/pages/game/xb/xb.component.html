@@ -1,0 +1,38 @@
+<jh-ui-frame pageTitle="寻宝">
+  <div class="game-xb-con">
+    <div class="xb-list">
+      <div class="xb-item" *ngFor="let gz of gzList; let i = index" (click)="xb(i)">
+        <div
+          class="gz-con"
+          [class.is-empty]="gz.img === 'empty'"
+          [class.is-show]="gz.img !== 'not-get'"
+          [class.current]="currentGzIndex === i">
+          <div
+            *ngIf="gz.img !== 'not-get' && gz.img !== 'empty'"
+            class="img-con"
+            [style.backgroundImage]="'url(/assets/images/avatar/zb/zb-' + gz.img + '.png)'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wa-ya-wa-con" [hidden]="!inWork">
+      <div class="wa-title" *ngIf="!showXbResult">挖呀挖</div>
+      <div class="wa-line">
+        <div class="wa-progress" [style.width.%]="xbProgress"></div>
+      </div>
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showXbResult" (click)="closeResult()">
+    <div class="result-body">
+      <div class="card-detail-img-text-con">
+        <div class="card-detail-img" [style.backgroundColor]="'#d4cc8b'">
+          <div class="line">
+            <img class="card-img-zb" src="/assets/images/avatar/zb/zb-{{ result.img }}.png" />
+          </div>
+        </div>
+        <div class="card-detail-desc">
+          <div class="card-detail-desc-text">得到：{{ result.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</jh-ui-frame>

@@ -1,0 +1,13 @@
+<div class="home-con" (click)="skipAnimation()">
+  <div class="placeholder">
+    <img src="/assets/placeholder/home.jpg" alt="" srcset="" />
+  </div>
+  <div class="home-bg">
+    <jh-home-bg></jh-home-bg>
+  </div>
+  <div *ngIf="!g.od.show" class="desc-text" [class.show-text]="showText">
+    <img class="desc-text-img" src="/assets/images/home/desc-text.png" alt="" srcset="" />
+  </div>
+  <jh-home-fan *ngIf="!g.od.show" [fanIn]="fanIn" [hidden]="!showFan"></jh-home-fan>
+  <jh-home-end *ngIf="g.od.show" (backHome)="removeEnd()" [texts]="g.od.texts"></jh-home-end>
+</div>

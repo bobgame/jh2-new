@@ -1,0 +1,26 @@
+<div class="choose-hero-con">
+  <div class="choose-title-con">
+    <div class="title">选择主角</div>
+    <div class="back-con" (click)="back()">
+      <jh-ui-btn-back></jh-ui-btn-back>
+    </div>
+  </div>
+  <div class="hero-list-con">
+    <div class="hero-list">
+      <div class="hero-item" [class.selected]="hero.id === currentHero.id" *ngFor="let hero of heroes" (click)="selectHero(hero)">
+        <div class="hero-picture">
+          <div class="picture-line"></div>
+          <img src="/assets/images/avatar/zj/zj-{{ hero.isActive ? hero.avatar : 'not-get' }}.png" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="start-con">
+    <button (click)="startPreChoose()">{{ currentHero.name }} · 开始</button>
+  </div>
+</div>
+<jh-pop-choose
+  *ngIf="showPreChoose && currentQa.item"
+  [title]="currentQa.item.question"
+  [answers]="currentQa.item.answers"
+  (itemClick)="answerQuestion($event)"></jh-pop-choose>

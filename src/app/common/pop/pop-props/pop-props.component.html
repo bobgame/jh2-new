@@ -1,0 +1,63 @@
+<div class="pop-props-con" role="dialog" tabindex="-1">
+  <div class="hole-container">
+    <div class="page-container">
+      <div class="pages-bg">
+        <div class="page-bg-frame frame-left"></div>
+        <div class="page-bg-frame frame-right"></div>
+        <div class="page-bg-frame frame-top"></div>
+        <div class="page-bg-frame frame-bottom"></div>
+        <div class="page-bg-chuangge left-top"></div>
+        <div class="page-bg-chuangge left-bottom"></div>
+        <div class="page-bg-chuangge right-top"></div>
+        <div class="page-bg-chuangge right-bottom"></div>
+        <div class="mask"></div>
+      </div>
+    </div>
+  </div>
+  <div class="props-top-con">
+    <div class="avatar-con">
+      <jh-ui-avatar [avatarData]="{ type: showType, id: props.rwId }"></jh-ui-avatar>
+    </div>
+    <div class="equip-con" *ngIf="showType === 'zj'">
+      <div class="equip-icon"></div>
+      <div class="equip-item weapon-con">
+        {{ g.hero.equip.weapon.active ? g.hero.equip.weapon.name : '未装备' }}
+      </div>
+      <div class="equip-item cloth-con">
+        {{ g.hero.equip.armor.active ? g.hero.equip.armor.name : '未装备' }}
+      </div>
+      <div class="equip-item horse-con">
+        {{ g.hero.equip.horse.active ? g.hero.equip.horse.name : '未装备' }}
+      </div>
+    </div>
+    <div class="heart-con" *ngIf="showType === 'rw'">
+      <div class="heart-empty">
+        <div class="heart-full" [style.width.%]="props.heart | heart"></div>
+      </div>
+    </div>
+    <div class="close-con">
+      <jh-ui-btn-close (closeClicked)="close()"></jh-ui-btn-close>
+    </div>
+  </div>
+  <div class="props-bottom-con">
+    <div class="base-list">
+      <div class="base-item d-flex" *ngFor="let baseItem of wyItems">
+        <div class="name">{{ baseItem.name }}:</div>
+        <div class="value" *ngIf="baseItem.type === 'num'">{{ baseItem.value }}</div>
+        <div class="value" *ngIf="baseItem.type === 'lv'">
+          <jh-ui-wy-lv [lv]="baseItem.value"></jh-ui-wy-lv>
+        </div>
+      </div>
+    </div>
+    <div class="jineng-list" *ngIf="!(showType === 'rw' && npc.id > 300)">
+      <div
+        class="jineng-item d-flex"
+        [class.is-active]="jnItem.active"
+        [class.is-selected]="selectedJnItem.key === jnItem.key"
+        *ngFor="let jnItem of jnItems"
+        (click)="selectJnItem(jnItem)"
+        [style.backgroundImage]="'url(/assets/images/avatar/jn/jn-' + (jnItem.active ? jnItem.img : 'not-get') + '.png)'"></div>
+      <div class="jineng-name">{{ selectedJnItem.name }}</div>
+    </div>
+  </div>
+</div>

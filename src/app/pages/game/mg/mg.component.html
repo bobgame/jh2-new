@@ -1,0 +1,17 @@
+<div class="cards-con mg-con">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ g.current.city.name }} - 郊外</div>
+      <div class="close-con" *ngIf="showExitBtn">
+        <jh-ui-btn-close (closeClicked)="showExit()"></jh-ui-btn-close>
+      </div>
+    </div>
+  </div>
+  <div class="mg-box">
+    <jh-maze (winMaze)="winMaze()"></jh-maze>
+  </div>
+</div>
+<div class="ml-mask-con" *ngIf="showMlMask" (click)="showMlMask = false">
+  <div class="text">咦，怎么迷路了？</div>
+</div>
+<jh-pop-choose *ngIf="showChoose" [title]="exitQa.question" [answers]="exitQa.answers" (itemClick)="exitAnswer($event)"></jh-pop-choose>

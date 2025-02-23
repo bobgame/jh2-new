@@ -1,0 +1,144 @@
+@import '../../../app.theme.scss';
+
+.pop-db-con {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+
+  ::ng-deep .bg-con {
+    top: 92px;
+  }
+
+  .db-con {
+    .human-con {
+      position: absolute;
+      z-index: 3;
+      left: 10px;
+      top: 18px;
+      color: $titleColor;
+
+      .tou-zi-con {
+        position: absolute;
+        left: 45px;
+        top: 30px;
+        width: 210px;
+        height: 58px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .text-con {
+        position: absolute;
+        z-index: 4;
+        left: 20px;
+        // background-color: red;
+        top: 16px;
+        width: 262px;
+        height: 74px;
+
+        .text {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          line-height: 24px;
+          overflow: hidden;
+
+          &.is-bold {
+            font-weight: bold;
+            color: $titleActiveColor;
+          }
+
+          ::ng-deep {
+            .red {
+              color: #923131;
+            }
+          }
+        }
+
+        .arrow-tip-con {
+          position: absolute;
+          right: 0;
+          bottom: -11px;
+        }
+      }
+
+      .avatar-con {
+        position: absolute;
+        z-index: 5;
+        left: 290px;
+        top: 0;
+      }
+
+
+    }
+
+    .npc-con {}
+
+    .hero-con {
+      top: 345px;
+
+      .tou-zi-con {
+        position: absolute;
+        left: 120px;
+        top: 10px;
+      }
+
+      .money {
+        position: absolute;
+        left: 120px;
+        top: 75px;
+        height: 30px;
+        padding-right: 10px;
+        color: #682218;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 20px;
+        line-height: 1;
+
+        .icon-liang {
+          width: 34px;
+          height: 18px;
+          margin-right: 4px;
+          background-image: url('/assets/images/icon-money-liang.png');
+          background-size: 100% 100%;
+        }
+
+        .icon-qian {
+          width: 23px;
+          height: 23px;
+          margin-right: 4px;
+          margin-left: 10px;
+          background-image: url('/assets/images/icon-money-qian.png');
+          background-size: 100% 100%;
+        }
+      }
+
+      .text-con {
+        left: 96px;
+        // background-color: red;
+      }
+
+      .avatar-con {
+        left: 20px;
+      }
+    }
+  }
+}
+
+.cancel-con {
+  position: absolute;
+  left: 76%;
+  top: 62.5%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  margin-top: 10px;
+}
+
+.toast-con {
+  background: none;
+}

@@ -1,0 +1,409 @@
+.fight-con {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #eddcc2;
+  border: 2px solid #937f4d;
+
+  .npc-con {
+    position: relative;
+    width: 100%;
+    height: 159px;
+    // background-color: #f8fceb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-list {
+      position: absolute;
+      width: 80%;
+      height: 109px;
+      left: 10px;
+      top: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .card-item {
+        position: absolute;
+        top: 0;
+        width: 72px;
+        height: 109px;
+        background-image: url('/assets/images/fight/rw-card-bg.png');
+        background-size: 100% 100%;
+        filter: drop-shadow(2px 2px 0px #b49b63);
+
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            left: calc(34px * #{$i - 1});
+          }
+        }
+
+      }
+    }
+
+    .hp-con {
+      position: absolute;
+      left: 42%;
+      top: 116px;
+      width: 150px;
+      color: #d62d26;
+      font-size: 20px;
+
+      .num {
+        text-align: center;
+      }
+
+      .line {
+        position: absolute;
+        width: 100%;
+        height: 12px;
+        left: 0;
+        top: 24px;
+        border: 3px solid #b90c0e;
+
+        .hp-line {
+          width: 0%;
+          height: 100%;
+          background: linear-gradient(0deg, #d00002 0%, #ff9396 100%);
+          transition: width 0.2s linear;
+        }
+      }
+    }
+
+    .npc-avatar {
+      position: absolute;
+      right: 12px;
+      top: 40px;
+      width: 54px;
+      height: 84px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .mj-con {
+      .mj-name {
+        font-size: 22px;
+        color: #333;
+        position: absolute;
+        right: 240px;
+        top: 124px;
+        background-size: 100% 100%;
+        z-index: 1;
+        // letter-spacing: -2px;
+      }
+
+      .mj-img {
+        $mjImgW: 48px;
+        position: absolute;
+        right: 24px;
+        top: 120px;
+        width: $mjImgW;
+        height: $mjImgW;
+        background-size: 100% 100%;
+        z-index: 2;
+        border: 2px solid #937f4d;
+        outline: 2px solid #ffee59;
+      }
+    }
+  }
+
+  .fight-img-con {
+    position: relative;
+    width: 378px;
+    height: 154px;
+    margin-left: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fight-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-size: 100% 100%;
+      z-index: 1;
+    }
+
+    .fight-bg-1 {
+      background-image: url('/assets/images/fight/fight-bg.png');
+      z-index: 1;
+    }
+
+    .img-container {
+      position: absolute;
+      left: 30px;
+      top: 50px;
+      width: 140px;
+      height: 180px;
+      transform: scale(0.5);
+      transform-origin: top left;
+      z-index: 2;
+
+      .status {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+
+        &.status-normal {
+          animation: fightStatusNormal 0.3s steps(2, jump-none) infinite;
+        }
+
+        &.status-attack {
+          background-position: 0px -900px;
+        }
+
+        &.status-injured {
+          // 只执行一次
+          background-position: 0px -720px;
+          animation: fightStatusInjured 0.3s steps(3, jump-none) 1;
+        }
+      }
+
+      @keyframes fightStatusNormal {
+
+        0%,
+        49.9% {
+          background-position: 0px 0px;
+        }
+
+        50%,
+        100% {
+          background-position: 0px -180px;
+        }
+      }
+
+      @keyframes fightStatusInjured {
+
+        0%,
+        33.2% {
+          background-position: 0px -360px;
+        }
+
+        33.3%,
+        66.6% {
+          background-position: 0px -540px;
+        }
+
+        66.7%,
+        100% {
+          background-position: 0px -720px;
+        }
+      }
+    }
+
+    .hero-fight-con {
+      &.hero-fight-con-1 {
+        .status {
+          background-image: url('/assets/images/fight/fight-man.png');
+        }
+
+      }
+
+      &.hero-fight-con-2 {
+        .status {
+          background-image: url('/assets/images/fight/fight-woman.png');
+          transform: scaleX(-1);
+        }
+      }
+    }
+
+    .npc-fight-con {
+      left: auto;
+      right: 30px;
+      top: 50px;
+      width: 140px;
+      height: 180px;
+      transform: scale(0.5);
+      transform-origin: top right;
+
+      &.npc-fight-con-1 {
+        .status {
+          background-image: url('/assets/images/fight/fight-man.png');
+          transform: scaleX(-1);
+        }
+      }
+
+      &.npc-fight-con-2 {
+        .status {
+          background-image: url('/assets/images/fight/fight-woman.png');
+        }
+      }
+    }
+
+    .fight-anim-point {
+      position: absolute;
+      left: 91px;
+      // left: 227px;
+      top: 91px;
+      width: 59px;
+      height: 7px;
+      opacity: 0;
+      background-image: url('/assets/images/fight/fight-anim-point.png');
+      background-size: 100% 100%;
+      z-index: 3;
+
+      &.hero-attack {
+        animation: pointHeroAttack 0.3s linear 1;
+      }
+
+      &.npc-attack {
+        animation: pointNpcAttack 0.3s linear 1;
+      }
+
+      @keyframes pointHeroAttack {
+        0% {
+          opacity: 0;
+          transform: translateX(0);
+        }
+
+        1% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(136px);
+        }
+      }
+
+      @keyframes pointNpcAttack {
+        0% {
+          opacity: 0;
+          transform: translateX(136px);
+        }
+
+        1% {
+          opacity: 1;
+          transform: translateX(136px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+      }
+
+    }
+  }
+
+  .hero-con {
+
+    .card-list {
+      top: auto;
+      bottom: 7px;
+
+      .card-item-con {
+        position: absolute;
+        top: 0;
+        width: 72px;
+        height: 109px;
+        z-index: 3;
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            left: calc(45px * #{$i - 1});
+          }
+        }
+      }
+    }
+
+    .hp-con {
+      left: 22%;
+      top: 1px;
+    }
+
+    .mj-con {
+      .mj-name {
+        right: auto;
+        left: 246px;
+        top: 6px;
+      }
+
+      .mj-img {
+        right: auto;
+        left: 24px;
+        top: -12px;
+      }
+    }
+  }
+
+  .fighting-con {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+
+    &.show {
+      opacity: 1;
+      z-index: 6;
+    }
+
+    .fighting-side {
+      position: absolute;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      transform: translateX(-50%) translateY(0);
+      transition: transform 0.3s linear;
+
+      .card-item-con {
+        width: 72px;
+        height: 109px;
+        margin: 0 2px;
+      }
+    }
+
+    .npc-side {
+      bottom: 50%;
+      padding-bottom: 1px;
+
+      &.anim {
+        transform: translateX(-50%) translateY(-106%);
+      }
+    }
+
+    .hero-side {
+      top: 50%;
+      padding-top: 1px;
+
+      &.anim {
+        transform: translateX(-50%) translateY(106%);
+      }
+    }
+  }
+
+  .fight-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9
+  }
+
+  .start-battle {
+    position: absolute;
+    left: 50%;
+    top: 61%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 2;
+    padding: 5px 15px;
+    font-size: 20px;
+
+    &.is-hidden {
+      opacity: 0;
+    }
+  }
+}

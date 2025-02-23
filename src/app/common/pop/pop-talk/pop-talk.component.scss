@@ -1,0 +1,83 @@
+@import '../../../app.theme.scss';
+
+.pop-talk-con {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+
+  ::ng-deep .bg-con {
+    top: 92px;
+  }
+
+  .talk-con {
+    .human-con {
+      position: absolute;
+      z-index: 3;
+      left: 10px;
+      top: 18px;
+      color: $titleColor;
+
+      .text-con {
+        position: absolute;
+        z-index: 4;
+        left: 20px;
+        // background-color: red;
+        top: 16px;
+        width: 262px;
+        height: 74px;
+
+        .text {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          line-height: 24px;
+          overflow: hidden;
+
+          &.is-bold {
+            font-weight: bold;
+            color: $titleActiveColor;
+          }
+
+          ::ng-deep {
+            .red {
+              color: #923131;
+            }
+          }
+        }
+
+        .arrow-tip-con {
+          position: absolute;
+          right: 0;
+          bottom: -11px;
+        }
+      }
+
+      .avatar-con {
+        position: absolute;
+        z-index: 5;
+        left: 290px;
+        top: 0;
+      }
+
+
+    }
+
+    .npc-con {}
+
+    .hero-con {
+      top: 345px;
+
+      .text-con {
+        left: 96px;
+        // background-color: red;
+      }
+
+      .avatar-con {
+        left: 20px;
+      }
+    }
+  }
+}

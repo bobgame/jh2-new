@@ -1,0 +1,55 @@
+@import '../../../app.theme.scss';
+
+.pop-choose-con {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mask {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+
+  .question-content {
+    position: relative;
+    z-index: 2;
+    border: 4px solid $borderColor;
+    width: 300px;
+    padding: 10px 0 0 0;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    color: $titleColor;
+
+    .question {
+      font-size: 20px;
+      padding-left: 16px;
+      margin-bottom: 10px;
+
+    }
+
+    .answer-list {
+      text-align: center;
+
+      .answer-item {
+        width: 90%;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding: 10px 15px;
+        border-top: 2px solid $borderColor;
+      }
+    }
+  }
+}

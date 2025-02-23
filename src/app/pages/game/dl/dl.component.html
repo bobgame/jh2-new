@@ -1,0 +1,38 @@
+<div class="cards-con" (click)="closeResult()">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ '打猎' }}</div>
+    </div>
+  </div>
+  <div class="dl-con">
+    <div class="dl-control-con">
+      <div class="dl-control-item" *ngFor="let lw of gzList" (click)="dl(lw)">
+        <div *ngIf="lw.img" class="img-con" [style.backgroundImage]="'url(/assets/images/dl/lw-' + lw.img + '.png)'">
+        </div>
+      </div>
+      <div class="bz-con" [ngClass]="'bz-con-' + currentDlGz.id" [class.show-anim]="currentDlGz.showBZ"></div>
+    </div>
+    <div class="bottom-show">
+      <div class="arrow-con">
+        <div class="label">箭枝：</div>
+        <div class="arrow-count">{{arrowCount > 0 ? arrowCount : 0}}</div>
+      </div>
+      <div class="line">
+        <div class="progress" [style.width.%]="totalTime * 100 / 40"></div>
+      </div>
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showDlResult" (click)="closeResult()">
+    <div class="title-con">
+      <div class="title">{{ '获得物品' }}</div>
+    </div>
+    <div class="result-body">
+      <div class="got-list">
+        <div class="got-item" *ngFor="let item of result">
+          <div class="name">{{item.name}}</div>
+          <div class="count">x{{item.count}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

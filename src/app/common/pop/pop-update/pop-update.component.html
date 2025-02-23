@@ -1,0 +1,22 @@
+<div class="pop-update-con" role="dialog" tabindex="-1">
+  <div class="mask"></div>
+  <div class="update-content">
+    <h3>新版本提醒</h3>
+    <h5>
+      当前: {{ currentVersion }}，<span class="red">新版: {{ u.upData.vt }}</span>
+    </h5>
+    <div class="update-list">
+      <div class="update-card-content" *ngFor="let cardCon of u.upData.d">
+        <div class="update-title">{{ cardCon.t }}</div>
+        <div class="update-text-list">
+          <div class="update-text" *ngFor="let cardText of cardCon.l">- {{ cardText }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="button-con">
+      <button class="btn btn-primary" (click)="close()">{{ '关闭' }}</button>
+
+      <button class="btn btn-primary" (click)="update()">{{ u.upData.b || '更新' }}</button>
+    </div>
+  </div>
+</div>

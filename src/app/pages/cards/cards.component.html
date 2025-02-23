@@ -1,0 +1,59 @@
+<div class="cards-con">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ isShowCard ? currentCategory.name : '集卡册' }}</div>
+      <div class="close-con" (click)="backToHome()">
+        <jh-ui-btn-close></jh-ui-btn-close>
+      </div>
+      <div class="back-con" *ngIf="isShowCard" (click)="back()">
+        <jh-ui-btn-back></jh-ui-btn-back>
+      </div>
+    </div>
+  </div>
+  <div class="card-cate-list" *ngIf="!isShowCard">
+    <div class="card-cate-item" *ngFor="let cate of cardsCategories" (click)="selectCategory(cate)">
+      <div class="num">{{ cate.got }}/{{ cate.total }}</div>
+      <div class="card" [style.backgroundColor]="cate.bgColor">
+        <div class="line">
+          <div class="text">{{ cate.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-scrollbar *ngIf="isShowCard" style="height: 340px" trackClass="scrollbar" viewClass="scrollbar-view" thumbClass="scrollbar-thumb">
+    <div class="card-cate-list card-list">
+      <div class="card-cate-item" *ngFor="let card of cards; let i = index" (click)="showCardDetail(card)">
+        <div class="num">{{ i + 1 }}/{{ cards.length }}</div>
+        <div class="card" [style.backgroundColor]="card.isBgWhite ? '#e2ebf3' : currentCategory.bgColor">
+          <div class="line">
+            <img
+              class="card-img card-img-{{ currentCategory.key }}"
+              *ngIf="card.got"
+              src="/assets/images/avatar/{{ card.pre }}{{ card.img }}.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-scrollbar>
+  <div class="card-detail" *ngIf="isShowCardDetail">
+    <div class="mask" (click)="closeCardDetail()"></div>
+    <div class="card-detail-con">
+      <div class="card-detail-title">
+        <div class="card-detail-title-text">{{ currentCard.name }}</div>
+        <div class="card-detail-title-close" (click)="closeCardDetail()">
+          <jh-ui-btn-close></jh-ui-btn-close>
+        </div>
+      </div>
+      <div class="card-detail-img-text-con">
+        <div class="card-detail-img" [style.backgroundColor]="currentCard.isBgWhite ? '#e2ebf3' : currentCategory.bgColor">
+          <div class="line">
+            <img class="card-img-{{ currentCategory.key }}" src="/assets/images/avatar/{{ currentCard.pre }}{{ currentCard.img }}.png" />
+          </div>
+        </div>
+        <div class="card-detail-desc">
+          <div class="card-detail-desc-text">{{ currentCard.desc }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

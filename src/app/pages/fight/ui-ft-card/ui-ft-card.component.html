@@ -1,0 +1,10 @@
+<div class="card-item" [class.selected]="isSelected" [class.card-item-mj]="cardId > 100">
+  <div *ngIf="cardId <= 100" class="card-item-bg" [style.backgroundImage]="'url(/assets/images/avatar/ft/ft-' + ftImg + '.png)'"></div>
+  <div class="card-item-text font-cn">{{ cardId | cnNum }}</div>
+  <div
+    *ngIf="cardId > 100"
+    class="card-item-bg card-item-bg-mj"
+    [style.backgroundImage]="'url(/assets/images/avatar/mj/mj-' + (cardId - 100) + '.png)'"></div>
+  <div class="card-item-text">{{ cardId | cnNum }}</div>
+  <div *ngIf="cardId > 100" class="card-item-text card-item-mj-name font-cn">{{ cardId - 100 | mjName }}</div>
+</div>

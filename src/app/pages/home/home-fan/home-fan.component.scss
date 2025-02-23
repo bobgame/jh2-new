@@ -1,0 +1,89 @@
+
+.fan-svg {
+  position: absolute;
+  z-index: 3;
+  width: 570px;
+  top: 206px;
+  left: 51px;
+  transform-origin: 48.95% 74.32%;
+  transform: rotate(60deg);
+  opacity: 0;
+  &.fan-svg-in {
+    animation: showFanSvg 1s ease-in-out 0s 1 normal forwards;
+  }
+
+  @keyframes showFanSvg {
+    0% {
+      opacity: 0;
+      transform: rotate(60deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(-5deg);
+    }
+    
+  }
+
+  .k {
+    fill: #946c00;
+    stroke: #3f3900;
+  }
+
+  .k, .l {
+    stroke-width: 2px;
+  }
+
+  .k, .l, .line-highlight, .line-bg {
+    stroke-miterlimit: 10;
+  }
+
+  .l {
+    fill: #8f8366;
+    stroke: #000666;
+  }
+
+  .line-highlight {
+    fill: #f9f4e8;
+    stroke: rgba(121, 108, 71, 0.01);
+  }
+
+  .line-bg {
+    fill: #fcfcfa;
+    stroke: #6f6752;
+  }
+  .fan-svg-item {
+    cursor: pointer;
+    .line-text path {
+      fill: rgb(80, 84, 70);
+    }
+    &:hover {
+      .line-highlight {
+        fill: #f7e9c7;
+      }
+  
+      .line-bg {
+        fill: #fffbe8;
+      }
+      .line-text path {
+        fill: rgb(150, 58, 16);
+      }
+    }
+  }
+
+  .fan-svg-exit {
+
+  }
+  .fan-svg-help {
+
+  }
+  .fan-svg-card {
+
+  }
+  .fan-svg-continue {
+
+  }
+  .fan-svg-start {
+
+  }
+
+}

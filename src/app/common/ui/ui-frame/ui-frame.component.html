@@ -1,0 +1,11 @@
+<div class="ui-frame-con">
+  <div class="title-con">
+    <div class="title">{{ pageTitle }}</div>
+    <div class="close-con" (click)="close()" *ngIf="showClose">
+      <jh-ui-btn-close></jh-ui-btn-close>
+    </div>
+  </div>
+  <div class="frame-body">
+    <ng-content></ng-content>
+  </div>
+</div>

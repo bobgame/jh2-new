@@ -1,0 +1,206 @@
+@import '../../../app.theme.scss';
+
+.pop-props-con {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  $maskTop: 134px;
+
+  .hole-container {
+    .page-container {
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%) !important;
+
+      .pages-bg {
+        .page-bg-chuangge {
+
+          &.left-top,
+          &.right-top {
+            top: $maskTop;
+          }
+        }
+      }
+    }
+  }
+
+  .mask {
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    top: $maskTop;
+    width: calc(100% - 24px);
+    height: calc(100% - #{$maskTop} - 12px);
+    background-color: rgba($color: #000000, $alpha: 0.05);
+  }
+
+  .props-top-con {
+    position: absolute;
+    z-index: 2;
+    left: 12px;
+    top: 12px;
+    width: calc(100% - 24px);
+
+    .avatar-con {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+
+    .equip-con {
+      position: absolute;
+      left: 120px;
+      top: 16px;
+      width: 180px;
+      // background-color: azure;
+      height: 88px;
+      padding-left: 40px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .equip-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 88px;
+        background-image: url('/assets/images/props/equip-icon.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .equip-item {
+        font-size: 20px;
+        color: $titleColor;
+      }
+    }
+
+    .heart-con {
+      position: absolute;
+      left: 120px;
+      top: 86px;
+      width: 200px;
+
+      .heart-empty {
+        position: relative;
+        width: 75px;
+        height: 25px;
+        background-image: url('/assets/images/props/heart-empty.png');
+        background-size: 75px 25px;
+        background-repeat: no-repeat;
+
+        .heart-full {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 25px;
+          background-image: url('/assets/images/props/heart-full.png');
+          background-size: 75px 25px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .close-con {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .props-bottom-con {
+    position: absolute;
+    z-index: 2;
+    left: 12px;
+    top: $maskTop;
+    width: calc(100% - 24px);
+    height: calc(100% - #{$maskTop} - 12px);
+    padding: 12px;
+
+    .base-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .base-item {
+        width: 50%;
+        height: 40px;
+        align-items: center;
+        font-size: 22px;
+        color: $titleColor;
+      }
+    }
+
+    .jineng-list {
+      position: absolute;
+      $jnItemWidth: 46px;
+      width: calc(#{$jnItemWidth} * 4 + 4px);
+      height: calc(#{$jnItemWidth} * 2 + 4px);
+      border: 2px solid $borderActiveColor;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      left: 50%;
+      bottom: 6px;
+      transform: translateX(-50%);
+
+      .jineng-item {
+        width: 46px;
+        height: 46px;
+        box-sizing: border-box;
+        background-image: url('/assets/images/avatar/jn/jn-not-get.png');
+        background-size: 100% 100%;
+        border: 1px solid $borderActiveColor;
+        position: relative;
+
+        &.is-selected {
+          border-color: $highlightRed;
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $highlightRed;
+            box-sizing: border-box;
+          }
+        }
+
+        &.is-active {
+          cursor: pointer;
+        }
+      }
+
+      .jineng-name {
+        position: absolute;
+        left: 0;
+        top: -36px;
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 24px;
+        color: $titleColor;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+<div class="cards-con">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ '测试' }}</div>
+    </div>
+  </div>
+  <div class="dl-con">
+    <div class="props">
+      <div class="prop-item">
+        <div class="name">武功:</div>
+        <button (click)="g.addWg(-1)">-</button>
+        <div class="value">{{ g.hero.wg }}</div>
+        <button (click)="g.addWg(1)">+</button>
+      </div>
+      <div class="prop-item">
+        <div class="name">声望:</div>
+        <button (click)="g.addSw(-1)">-</button>
+        <div class="value">{{ g.hero.sw }}</div>
+        <button (click)="g.addSw(1)">+</button>
+      </div>
+    </div>
+    <div class="props-bottom-con">
+      <div class="base-list">
+        <div class="base-item d-flex" *ngFor="let baseItem of wyItems">
+          <div class="name">{{ baseItem.name }}:</div>
+          <div class="value" *ngIf="baseItem.type === 'num'">{{ baseItem.value }}</div>
+          <div class="value" *ngIf="baseItem.type === 'lv'">
+            <jh-ui-wy-lv [lv]="baseItem.value" (click)="changeWyLv(baseItem)"></jh-ui-wy-lv>
+          </div>
+        </div>
+      </div>
+      <div class="jineng-list">
+        <div
+          class="jineng-item d-flex"
+          [class.is-active]="jnItem.active"
+          [class.is-selected]="selectedJnItem.key === jnItem.key"
+          *ngFor="let jnItem of jnItems"
+          (click)="selectJnItem(jnItem)"
+          [style.backgroundImage]="'url(/assets/images/avatar/jn/jn-' + (jnItem.active ? jnItem.img : 'not-get') + '.png)'"></div>
+        <div class="jineng-name">{{ selectedJnItem.name }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="pop-db-con" (click)="guideNext()">
+  <jh-ui-city-bg></jh-ui-city-bg>
+  <div class="db-con" *ngIf="!showTalk">
+    <div class="human-con npc-con">
+      <div class="tou-zi-con">
+        <jh-ui-tz [tzData]="npcTz" *ngFor="let npcTz of dbData.npc"></jh-ui-tz>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: npcTalk.type, id: npcTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+    <div class="human-con hero-con">
+      <div class="tou-zi-con" *ngIf="g.dbGlobalData.type !== 'dx'">
+        <jh-ui-tz [tzData]="heroTz" *ngFor="let heroTz of dbData.hero"></jh-ui-tz>
+      </div>
+      <div class="money">
+        <div class="icon-liang"></div>
+        <div class="text">{{ g.hero.jq / 1000 | int }}</div>
+        <div class="icon-qian"></div>
+        <div class="text">{{ g.hero.jq % 1000 | int }}</div>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: heroTalk.type, id: heroTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+    <div class="cancel-con" *ngIf="g.dbGlobalData.type === 'yp' && !this.toastData.showToast">
+      <button (click)="cancelYP($event)">放弃</button>
+    </div>
+  </div>
+  <div class="db-con" *ngIf="showTalk">
+    <div class="human-con npc-con" *ngIf="showNpc">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="npcTalk.isActive">{{ npcTalk.text }}</div>
+        <div class="arrow-tip-con" *ngIf="npcTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: npcTalk.type, id: npcTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+    <div class="human-con hero-con" *ngIf="showHero">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="heroTalk.isActive" [innerHTML]="heroTalk.text"></div>
+        <div class="arrow-tip-con" *ngIf="heroTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: heroTalk.type, id: heroTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+  </div>
+
+  <jh-pop-choose *ngIf="showChoose" [title]="dbQa.question" [answers]="dbQa.answers" (itemClick)="exitAnswer($event)"></jh-pop-choose>
+  <div class="toast-con" *ngIf="toastData.showToast">
+    <div class="text" *ngIf="toastData.status === 'win'">赢了{{ toastData.jq }}两</div>
+    <div class="text" *ngIf="toastData.status === 'lose'">输了{{ toastData.jq }}两</div>
+    <div class="text" *ngIf="toastData.status === 'draw'">平局</div>
+    <div class="text" *ngIf="toastData.status === 'special' || toastData.status === 'exit'">{{ toastData.text }}</div>
+  </div>
+</div>

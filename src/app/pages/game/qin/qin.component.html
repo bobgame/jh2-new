@@ -1,0 +1,55 @@
+<div class="cards-con" (click)="closeResult()">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ '抚琴' }}</div>
+    </div>
+  </div>
+  <div class="qin-con">
+    <div class="qin-control-con">
+      <div class="qin-control-item qin-top" (click)="qinClick($event, 'top')">
+        <div class="qin-line">
+          <div class="qin-progress" [class.is-error]="qinData.top.showError"
+            [style.transform]="'translateX(-' + (100 - qinData.top.progress) + '%)'"></div>
+        </div>
+        <div class="qin-pos" (click)="qinClick($event, 'top', true)" [style.left.%]="qinData.top.point">
+          <div class="qin-pos-icon" [class.qin-pos-anim]="qinData.top.isGood"></div>
+        </div>
+      </div>
+      <div class="qin-control-item qin-middle" (click)="qinClick($event, 'middle')">
+        <div class="qin-line">
+          <div class="qin-progress" [class.is-error]="qinData.middle.showError"
+            [style.transform]="'translateX(-' + (100 - qinData.middle.progress) + '%)'"></div>
+        </div>
+        <div class="qin-pos" (click)="qinClick($event, 'middle', true)" [style.left.%]="qinData.middle.point">
+          <div class="qin-pos-icon" [class.qin-pos-anim]="qinData.middle.isGood"></div>
+        </div>
+      </div>
+      <div class="qin-control-item qin-bottom" (click)="qinClick($event, 'bottom')">
+        <div class="qin-line">
+          <div class="qin-progress" [class.is-error]="qinData.bottom.showError"
+            [style.transform]="'translateX(-' + (100 - qinData.bottom.progress) + '%)'"></div>
+        </div>
+        <div class="qin-pos" (click)="qinClick($event, 'bottom', true)" [style.left.%]="qinData.bottom.point">
+          <div class="qin-pos-icon" [class.qin-pos-anim]="qinData.bottom.isGood"></div>
+        </div>
+      </div>
+    </div>
+    <div class="title-contain bottom-contain">
+      <div class="line">
+        <div class="progress" [style.width.%]="leftTime * 100 / 15"></div>
+      </div>
+      <div class="touch-con">
+        <div class="label">连击</div>
+        <div class="combo">{{combo}}</div>
+      </div>
+    </div>
+    <div class="touch-control-con">
+      <div class="touch-item" (click)="qinClick($event, 'top', true)">〇</div>
+      <div class="touch-item" (click)="qinClick($event, 'middle', true)">〇</div>
+      <div class="touch-item" (click)="qinClick($event, 'bottom', true)">〇</div>
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showQinResult" (click)="closeResult()">
+    得分：{{score}}
+  </div>
+</div>

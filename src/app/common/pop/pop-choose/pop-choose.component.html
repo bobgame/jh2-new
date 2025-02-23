@@ -1,0 +1,9 @@
+<div class="pop-choose-con" *ngIf="answers" role="dialog" tabindex="-1">
+  <div class="mask"></div>
+  <div class="question-content">
+    <div class="question" [innerHTML]="title | textColor"></div>
+    <div class="answer-list">
+      <button class="answer-item" *ngFor="let answer of answers" (click)="selectItem(answer, $event)" [innerHtml]="answer.text"></button>
+    </div>
+  </div>
+</div>

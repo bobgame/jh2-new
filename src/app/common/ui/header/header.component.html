@@ -1,0 +1,21 @@
+<div class="header-con">
+  <div class="avatar-con" (click)="clickAvatar()">
+    <img src="assets/images/avatar/zj/zj-{{ g.hero.avatar }}.png" alt="avatar" (click)="avatarClick.emit()" />
+  </div>
+  <div class="age-time-con" *ngIf="!g.show.hideInfo">
+    <div class="age">{{ g.hero.age }}岁</div>
+    <div class="time">{{ g.hero.time | showTime }}</div>
+  </div>
+  <div class="icon-con" *ngIf="!g.show.hideInfo">
+    <div class="icons">
+      <div class="icon"></div>
+      <div>{{ g.hero.tl }}</div>
+      <!-- <div>{{ g.hero.tl }}/{{ g.hero.tlM }}</div> -->
+      <!-- <div class="icon" *ngFor="let showHP of [1, 2, 3, 4, 5]" [hidden]="g.hero.tl < showHP * 20 - 10"></div> -->
+    </div>
+    <div class="money">
+      <div class="icon"></div>
+      <div class="text">{{ g.hero.jq / 1000 | int }}</div>
+    </div>
+  </div>
+</div>

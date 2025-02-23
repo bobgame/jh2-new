@@ -1,0 +1,243 @@
+@import '../../../app.theme.scss';
+
+.pop-miji-con {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hole-container {
+    .page-container {
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+
+  .mask {
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    top: 0;
+    width: calc(100% - 24px);
+    height: calc(100% - 12px);
+    // background-color: rgba($color: #000000, $alpha: 0.05);
+  }
+
+  .items-con {
+    margin: 6px 20px;
+    width: 360px;
+    height: 440px;
+    position: absolute;
+    z-index: 2;
+
+    .title-contain {
+      border: 4px solid $borderColor;
+      width: 360px;
+      height: 440px;
+      padding: 4px;
+      background-image: url('/assets/images/choose/choose-bg-sucai.png');
+      background-size: 4px 4px;
+      background-repeat: repeat;
+
+      .title-con {
+        width: 344px;
+        height: 48px;
+        background-image: url('/assets/images/choose/choose-title-bg.png');
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        padding-bottom: 8px;
+        color: $titleColor;
+        position: relative;
+      }
+
+      .close-con,
+      .back-con {
+        position: absolute;
+        right: 25px;
+        top: 4px;
+        background-color: antiquewhite;
+      }
+
+      .back-con {
+        left: 25px;
+        right: auto;
+      }
+    }
+
+    .item-detail-img-text-con {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 6px;
+
+      .item-detail-desc {
+        width: calc(100% - 12px);
+        min-height: 100px;
+        // background-color: #faf1e1;
+        padding: 0 8px 8px;
+        font-size: 18px;
+        line-height: 1.1;
+
+        .item-detail-desc-text.title {
+          font-size: 22px;
+          margin-bottom: 5px;
+        }
+
+        .item-detail-desc-text.small {
+          padding-right: 8px;
+          line-height: 1;
+        }
+      }
+    }
+
+    ::ng-deep {
+
+      .scrollbar {
+        background-color: rgba(198, 176, 152, 0.669);
+        border-radius: 4px;
+        width: 8px !important;
+      }
+
+      .scrollbar-thumb {
+        background-color: #e7cfb7;
+        border: 2px solid #977c51;
+      }
+
+      .scrollbar-control {
+        justify-content: flex-end;
+      }
+    }
+
+    .item-list {
+      width: calc(100% - 6px);
+      min-height: 180px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow-y: auto;
+
+      // width: calc(100% + 6px);
+      // height: 350px;
+
+      .wp-item {
+        width: calc(100% / 6);
+        height: 60px;
+        border: 1px solid $borderColor;
+        cursor: pointer;
+
+        .img-com {
+          width: 100%;
+          height: 100%;
+          border: 4px solid rgba($color: #fff, $alpha: 0.02);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.is-selected {
+            border-color: $highlightRed;
+          }
+
+          .wp-item-img {
+            width: 90%;
+            height: 90%;
+          }
+        }
+
+        @for $i from 1 through 18 {
+          &:nth-child(#{$i}) {
+            width: calc(100% / 6) !important;
+            height: 60px !important;
+            border: 1px solid $borderColor !important;
+          }
+        }
+
+        &:nth-child(-n + 6) {
+          border-top-width: 2px !important;
+        }
+      }
+
+      .wp-empty {
+        height: 0;
+        border: none;
+        cursor: default;
+      }
+
+      &.is-column-4 {
+        .wp-item {
+          @for $i from 1 through 24 {
+            &:nth-child(#{$i}) {
+              width: calc(100% / 6) !important;
+              height: 60px !important;
+              border: 1px solid $borderColor !important;
+            }
+          }
+        }
+      }
+
+      &.is-column-5 {
+        .wp-item {
+          @for $i from 1 through 30 {
+            &:nth-child(#{$i}) {
+              width: calc(100% / 6) !important;
+              height: 60px !important;
+              border: 1px solid $borderColor !important;
+            }
+          }
+        }
+      }
+
+      &.is-column-6 {
+        .wp-item {
+          @for $i from 1 through 36 {
+            &:nth-child(#{$i}) {
+              width: calc(100% / 6) !important;
+              height: 60px !important;
+              border: 1px solid $borderColor !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .money {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    padding-right: 10px;
+    color: #682218;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+    line-height: 1;
+
+    .icon-liang {
+      width: 34px;
+      height: 18px;
+      margin-right: 4px;
+      background-image: url('/assets/images/icon-money-liang.png');
+      background-size: 100% 100%;
+    }
+
+    .icon-qian {
+      width: 23px;
+      height: 23px;
+      margin-right: 4px;
+      margin-left: 10px;
+      background-image: url('/assets/images/icon-money-qian.png');
+      background-size: 100% 100%;
+    }
+  }
+}

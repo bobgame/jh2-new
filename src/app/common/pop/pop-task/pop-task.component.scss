@@ -1,0 +1,141 @@
+@import '../../../app.theme.scss';
+
+.pop-task-con {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 11;
+
+  ::ng-deep .bg-con {
+    top: 92px;
+  }
+
+  .task-con {
+    .human-con {
+      position: absolute;
+      z-index: 3;
+      left: 10px;
+      top: 18px;
+      color: $titleColor;
+
+      .text-con {
+        position: absolute;
+        z-index: 4;
+        left: 20px;
+        // background-color: red;
+        top: 16px;
+        width: 262px;
+        height: 74px;
+
+        .text {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          line-height: 24px;
+          overflow: hidden;
+
+          &.is-bold {
+            font-weight: bold;
+            color: $titleActiveColor;
+          }
+
+          ::ng-deep {
+            .red {
+              color: #923131;
+            }
+          }
+        }
+
+        .arrow-tip-con {
+          position: absolute;
+          right: 0;
+          bottom: -11px;
+        }
+      }
+
+      .avatar-con {
+        position: absolute;
+        z-index: 5;
+        left: 290px;
+        top: 0;
+
+        &.opacity-0 {
+          opacity: 0;
+        }
+      }
+
+
+    }
+
+    .npc-con {}
+
+    .hero-con {
+      top: 345px;
+
+      .text-con {
+        left: 96px;
+        // background-color: red;
+      }
+
+      .avatar-con {
+        left: 20px;
+      }
+    }
+  }
+}
+
+.pop-choose-con {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mask {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+
+  .question-content {
+    position: relative;
+    z-index: 2;
+    border: 4px solid $borderColor;
+    width: 300px;
+    padding: 10px 0 0 0;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    color: $titleColor;
+
+    .question {
+      font-size: 20px;
+      padding-left: 16px;
+      margin-bottom: 10px;
+
+    }
+
+    .answer-list {
+      text-align: center;
+
+      .answer-item {
+        width: 90%;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding: 10px 15px;
+        border-top: 2px solid $borderColor;
+      }
+    }
+  }
+}

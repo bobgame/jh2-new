@@ -1,0 +1,5 @@
+<div class="home-end-con" (click)="updateEnd()">
+  <div class="text-list">
+    <div class="text-item" [class.show]="text.show" *ngFor="let text of textArr" [innerHtml]="text.content | splitName"></div>
+  </div>
+</div>

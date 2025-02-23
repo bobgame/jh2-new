@@ -1,0 +1,27 @@
+<div class="pop-talk-con" (click)="guideNext()">
+  <jh-ui-city-bg></jh-ui-city-bg>
+  <div class="talk-con">
+    <div class="human-con npc-con" *ngIf="showNpc">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="npcTalk.isActive" [innerHTML]="npcTalk.text"></div>
+        <div class="arrow-tip-con" *ngIf="npcTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: npcTalk.type, id: npcTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+    <div class="human-con hero-con" *ngIf="showHero">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="heroTalk.isActive" [innerHTML]="heroTalk.text"></div>
+        <div class="arrow-tip-con" *ngIf="heroTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con">
+        <jh-ui-avatar [avatarData]="{ type: heroTalk.type, id: heroTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+  </div>
+</div>

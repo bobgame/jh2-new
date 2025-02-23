@@ -1,0 +1,116 @@
+<div class="pop-props-con" role="dialog" tabindex="-1">
+  <div class="hole-container">
+    <div class="page-container">
+      <div class="pages-bg">
+        <div class="page-bg-frame frame-left"></div>
+        <div class="page-bg-frame frame-right"></div>
+        <div class="page-bg-frame frame-top"></div>
+        <div class="page-bg-frame frame-bottom"></div>
+        <div class="page-bg-chuangge left-top"></div>
+        <div class="page-bg-chuangge left-bottom"></div>
+        <div class="page-bg-chuangge right-top"></div>
+        <div class="page-bg-chuangge right-bottom"></div>
+        <div class="mask"></div>
+      </div>
+    </div>
+  </div>
+  <div class="items-con">
+    <div class="title-contain">
+      <div class="title-con">
+        <div class="title">{{ currentCategory.name }}</div>
+        <div class="close-con" (click)="close()">
+          <jh-ui-btn-close></jh-ui-btn-close>
+        </div>
+        <div class="tab-switch tab-left" (click)="tabToLeft()">
+          <div class="tab-item"></div>
+        </div>
+        <div class="tab-switch tab-right" (click)="tabToRight()">
+          <div class="tab-item"></div>
+        </div>
+        <!-- <div class="back-con" *ngIf="isShowItem" (click)="back()">
+          <jh-ui-btn-back></jh-ui-btn-back>
+        </div> -->
+      </div>
+
+      <div class="item-detail-img-text-con" *ngIf="currentItem">
+        <div class="item-detail-img" [style.backgroundColor]="'#a5a4b4'">
+          <div class="line">
+            <img
+              class="item-img-wp"
+              *ngIf="currentCategory.in === 'wp'; else zbAvatar"
+              src="/assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
+            <ng-template #zbAvatar>
+              <img class="item-img-wp" src="/assets/images/avatar/zb/zb-{{ currentItem.avatar }}.png" />
+            </ng-template>
+          </div>
+        </div>
+        <div class="item-detail-desc">
+          <div class="item-detail-desc-text">{{ currentItem.name }}</div>
+          <div class="item-detail-desc-text" *ngIf="'sale' !== g.itemData.type">
+            作用：{{ currentItem.value >= 0 ? '+' : '' }}{{ currentItem.value }}
+            {{ currentCategory.valueText }}
+          </div>
+          <div class="item-detail-desc-text" *ngIf="'buy' !== g.itemData.type">数量：{{ currentItem.count }}</div>
+          <div class="item-detail-desc-text" *ngIf="'buy' === g.itemData.type">已有：{{ currentItem.count }}</div>
+          <div class="item-detail-desc-text item-money" *ngIf="'buy' === g.itemData.type">
+            <div class="icon-liang"></div>
+            <div class="text">{{ currentItem.price / 1000 | int }}</div>
+            <div class="icon-qian"></div>
+            <div class="text">{{ currentItem.price % 1000 | int }}</div>
+          </div>
+          <div class="item-detail-desc-text item-money" *ngIf="'sale' === g.itemData.type">
+            <div class="icon-liang"></div>
+            <div class="text">{{ currentItem.price / 2 / 1000 | int }}</div>
+            <div class="icon-qian"></div>
+            <div class="text">{{ (currentItem.price / 2) % 1000 | int }}</div>
+          </div>
+          <ng-scrollbar style="height: 60px" trackClass="scrollbar" viewClass="scrollbar-view" thumbClass="scrollbar-thumb">
+            <div class="item-detail-desc-text small">{{ currentItem.desc }}</div>
+          </ng-scrollbar>
+        </div>
+        <div class="btn-con" *ngIf="g.itemData.type === 'hero'">
+          <button *ngIf="currentItem.canEquip" (click)="equipZb(currentItem)">装备</button>
+          <button *ngIf="currentItem.canUnEquip" (click)="unEquipZb(currentItem)">卸下</button>
+          <button *ngIf="currentItem.canUse" (click)="useWp(currentItem)">使用</button>
+        </div>
+        <div class="btn-con" *ngIf="g.itemData.type === 'buy' && currentItem.count < 199">
+          <button *ngIf="g.hero.jq >= currentItem.price" (click)="buy(currentItem)">购买</button>
+        </div>
+        <div class="btn-con" *ngIf="g.itemData.type === 'sale'">
+          <button (click)="sale(currentItem)">卖出</button>
+        </div>
+      </div>
+      <ng-scrollbar
+        style="position: absolute; width: 100%; height: 180px; bottom: 33px; left: 3px"
+        trackClass="scrollbar"
+        viewClass="scrollbar-view"
+        thumbClass="scrollbar-thumb">
+        <div
+          class="item-list"
+          [class.is-column-4]="items.length > 18 && items.length <= 24"
+          [class.is-column-5]="items.length > 24 && items.length <= 30"
+          [class.is-column-6]="items.length > 30 && items.length <= 36">
+          <div class="wp-item" *ngFor="let item of items" (click)="selectItem(item)">
+            <div class="img-com" [class.is-selected]="currentItem && currentItem.id === item.id">
+              <img
+                class="wp-item-img"
+                *ngIf="currentCategory.in === 'wp'; else zbItemAvatar"
+                src="/assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
+              <ng-template #zbItemAvatar>
+                <img class="wp-item-img" src="/assets/images/avatar/zb/zb-{{ item.avatar }}.png" />
+              </ng-template>
+            </div>
+          </div>
+          <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
+        </div>
+      </ng-scrollbar>
+      <div class="money">
+        <div class="icon-liang"></div>
+        <div class="text">{{ g.hero.jq / 1000 | int }}</div>
+        <div class="icon-qian"></div>
+        <div class="text">{{ g.hero.jq % 1000 | int }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<jh-pop-choose *ngIf="showChoose" [title]="itemQa.question" [answers]="itemQa.answers" (itemClick)="exitAnswer($event)"></jh-pop-choose>

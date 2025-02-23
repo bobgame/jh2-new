@@ -1,0 +1,64 @@
+.bg-con {
+  position: absolute;
+  z-index: 1;
+  left: 13px;
+  top: 56px;
+  width: 372px;
+  height: 289px;
+
+  .city {
+    position: absolute;
+    z-index: 2;
+    left: 2px;
+    top: 41px;
+    width: calc(100% - 4px);
+    height: 206px;
+    border: 2px solid #b79869;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .city-name {
+      position: absolute;
+      right: 4px;
+      top: 18px;
+      width: 46px;
+      min-height: 70px;
+      background-color: rgb(237, 221, 187);
+      background-image: url('/assets/images/city-title-bg.png');
+      background-size: 100% 1px;
+      background-repeat: repeat-y;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .label {
+        width: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #7d5227;
+      }
+
+      .title-side {
+        position: absolute;
+        width: 100%;
+        height: 9px;
+        top: -9px;
+        left: 0;
+        background-image: url('/assets/images/city-title-bg-side.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        &.side-bottom {
+          top: auto;
+          bottom: -9px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

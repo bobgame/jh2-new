@@ -1,0 +1,28 @@
+.tip-arrow-down-con {
+  position: relative;
+  width: 20px;
+  height: 10px;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    animation: tipArrowDownJump 0.4s infinite;
+  }
+
+  @keyframes tipArrowDownJump {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+
+  }
+}

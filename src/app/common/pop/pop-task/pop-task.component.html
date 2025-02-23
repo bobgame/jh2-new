@@ -1,0 +1,40 @@
+<div class="pop-task-con" (click)="guideNext()">
+  <jh-ui-city-bg></jh-ui-city-bg>
+  <div class="task-con">
+    <div class="human-con npc-con" *ngIf="showNpc">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="npcTalk.isActive" [innerHTML]="npcTalk.text"></div>
+        <div class="arrow-tip-con" *ngIf="npcTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con" [class.opacity-0]="!showNpcAvatar">
+        <jh-ui-avatar [avatarData]="{ type: npcTalk.type, id: npcTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+    <div class="human-con hero-con" *ngIf="showHero">
+      <div class="text-con">
+        <div class="text" [class.is-bold]="heroTalk.isActive" [innerHTML]="heroTalk.text"></div>
+        <div class="arrow-tip-con" *ngIf="heroTalk.isActive">
+          <jh-ui-tip-arrow-down></jh-ui-tip-arrow-down>
+        </div>
+      </div>
+      <div class="avatar-con" [class.opacity-0]="!showHeroAvatar">
+        <jh-ui-avatar [avatarData]="{ type: heroTalk.type, id: heroTalk.rwId }"></jh-ui-avatar>
+      </div>
+    </div>
+  </div>
+  <div class="pop-choose-con" *ngIf="showQa" role="dialog" tabindex="-1">
+    <div class="mask"></div>
+    <div class="question-content">
+      <div class="question" [innerHTML]="qaData.qa.question | textColor"></div>
+      <div class="answer-list">
+        <button
+          class="answer-item"
+          *ngFor="let answerItem of qaData.qa.answers"
+          (click)="answer(answerItem, $event)"
+          [innerHTML]="answerItem.text"></button>
+      </div>
+    </div>
+  </div>
+</div>

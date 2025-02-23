@@ -1,0 +1,77 @@
+<div class="hole-container is-pixel no-text-shadow" [class.no-text-shadow]="!s.stData.textShadow">
+  <div class="page-container">
+    <div class="pages-bg">
+      <div class="page-bg-frame frame-left"></div>
+      <div class="page-bg-frame frame-right"></div>
+      <div class="page-bg-frame frame-top"></div>
+      <div class="page-bg-frame frame-bottom"></div>
+      <div class="page-bg-chuangge left-top"></div>
+      <div class="page-bg-chuangge left-bottom"></div>
+      <div class="page-bg-chuangge right-top"></div>
+      <div class="page-bg-chuangge right-bottom"></div>
+    </div>
+    <div class="pages" [ngSwitch]="g.current.page">
+      <jh-home *ngSwitchCase="PageEnum.Home"></jh-home>
+      <jh-choose-hero *ngSwitchCase="PageEnum.ChooseHero"></jh-choose-hero>
+      <jh-play-guide *ngSwitchCase="PageEnum.PlayGuide"></jh-play-guide>
+      <jh-city *ngSwitchCase="PageEnum.City"></jh-city>
+      <jh-fight *ngSwitchCase="PageEnum.Fight"></jh-fight>
+      <jh-map *ngSwitchCase="PageEnum.Map"></jh-map>
+      <jh-game *ngSwitchCase="PageEnum.Game"></jh-game>
+      <jh-cy *ngSwitchCase="PageEnum.GameCy"></jh-cy>
+      <jh-dl *ngSwitchCase="PageEnum.GameDl"></jh-dl>
+      <jh-xb *ngSwitchCase="PageEnum.GameXb"></jh-xb>
+      <jh-qin *ngSwitchCase="PageEnum.GameQin"></jh-qin>
+      <jh-qi *ngSwitchCase="PageEnum.GameQi"></jh-qi>
+      <jh-shu *ngSwitchCase="PageEnum.GameShu"></jh-shu>
+      <jh-hua *ngSwitchCase="PageEnum.GameHua"></jh-hua>
+      <jh-mg *ngSwitchCase="PageEnum.GameMg"></jh-mg>
+      <jh-db *ngSwitchCase="PageEnum.GameDb"></jh-db>
+      <jh-pei-yao *ngSwitchCase="PageEnum.GamePy"></jh-pei-yao>
+      <jh-cards *ngSwitchCase="PageEnum.Cards"></jh-cards>
+      <jh-help *ngSwitchCase="PageEnum.Help"></jh-help>
+      <jh-settings *ngSwitchCase="PageEnum.Settings"></jh-settings>
+    </div>
+    <jh-pop-items *ngIf="g.show.pop.items"></jh-pop-items>
+    <jh-pop-miji *ngIf="g.show.pop.miJi"></jh-pop-miji>
+    <jh-sl *ngIf="g.show.pop.sl"></jh-sl>
+
+    <jh-ui-toast *ngIf="jt.toast.show"></jh-ui-toast>
+    <jh-pop-choose
+      class="app-pop-con"
+      *ngIf="showQaChoose"
+      [title]="qaTitle"
+      [answers]="qaAnswers"
+      (itemClick)="exitAnswer($event)"></jh-pop-choose>
+    <jh-pop-update *ngIf="g.show.pop.up"></jh-pop-update>
+    <div class="version" [class.version-home]="g.current.page === PageEnum.Home" [class.version-city]="g.current.page === PageEnum.City">
+      {{ version }}
+    </div>
+
+    <!-- <div
+      class="show-qi-pan"
+      style="position: fixed; z-index: 9999; right: 0; top: 0; width: 12px; height: 12px"
+      (click)="showQP = !showQP"></div>
+    <jh-qi-pan *ngIf="showQP"></jh-qi-pan> -->
+    <!-- <div
+      *ngIf="g.current.page === PageEnum.City" -->
+    <!-- <div
+      *ngIf="g.current.page === PageEnum.City"
+      class="show-qi-pan"
+      style="position: fixed; z-index: 9999; right: 0; top: 0; width: 30px; height: 30px"
+      (click)="showZB = !showZB"></div> -->
+    <!-- <jh-zb *ngIf="showZB"></jh-zb> -->
+  </div>
+  <div class="footer" style="display: none">
+    <p (click)="copy()">
+      版本：{{ version }}，纯个人爱好重制，无商业用途，如有侵权，请联系 {{ 'bobgame@vip.qq.com' }}，我将考虑停止项目开发。官方QQ群:
+      701030167
+      <a href="javascript:">复制群号</a>
+    </p>
+    <p>特别鸣谢：raphael 提供了大量的任务录屏、截图、实现方案和很多基础数据支持，非常感谢！</p>
+    <p>感谢诛估Nick提供数据和棋局的帮助！</p>
+  </div>
+</div>
+<div class="font-cn" style="position: absolute; left: -100px; opacity: 0; width: 10px; top: -100px; z-index: -1">一</div>
+
+<router-outlet></router-outlet>

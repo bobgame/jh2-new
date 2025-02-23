@@ -1,0 +1,54 @@
+@import '../../../app.theme.scss';
+
+.toast-con {
+  .card-con {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 81px;
+    height: 104px;
+    margin-left: 5%;
+    border: 2px solid $borderDarkerColor;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    .line {
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+      border: 2px solid rgba($color: #fff, $alpha: 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .text {
+        font-size: 24px;
+        width: 2px;
+        height: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .line {
+      background-color: rgba($color: #fff, $alpha: 0.3);
+
+      img {
+        width: 90%;
+
+        &.card-img-zj,
+        &.card-img-rw,
+        &.card-img-wy {
+          width: calc(100% + 4px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '../../app.theme.scss';
+
+:host {
+  position: absolute;
+  display: block;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.05);
+
+  ::ng-deep {
+    .ui-frame-con {
+      margin: 11px 20px;
+      width: 360px;
+      height: 450px;
+    }
+
+    .scrollbar {
+      background-color: rgba(198, 176, 152, 0.669);
+      border-radius: 4px;
+      width: 8px !important;
+    }
+
+    .scrollbar-thumb {
+      background-color: #e7cfb7;
+      border: 2px solid #977c51;
+    }
+
+    .scrollbar-control {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.sl-list {
+  // margin: 31px 20px;
+  // padding: 6px;
+
+  .sl-item {
+    width: 100%;
+    height: 80px;
+    border: 2px solid $borderColor;
+    margin-bottom: 6px;
+    position: relative;
+    font-size: 22px;
+
+    .avatar {
+      position: absolute;
+      left: 4px;
+      bottom: 0px;
+      width: 48px;
+      height: 70px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .name {
+      position: absolute;
+      top: 4px;
+      left: 65px;
+    }
+
+    .pos {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+    }
+
+    .time {
+      position: absolute;
+      left: 65px;
+      bottom: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.selected {
+      border-color: red;
+    }
+
+    &.sl-new {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

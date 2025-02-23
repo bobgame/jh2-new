@@ -1,0 +1,309 @@
+<div *ngIf="!talkData.show && !t.taskData.show" class="city-con">
+  <jh-ui-city-bg></jh-ui-city-bg>
+  <jh-header (avatarClick)="openMenuPop()"></jh-header>
+  <div class="npc-con" *ngIf="!g.show.hideInfo && !t.isInTask">
+    @switch (g.current.cityGroup) {
+      <!-- 普通 -->
+      @case (CityGroupEnum.Normal) {
+        <div class="npc-list npc-list-{{ isXiaoDao ? currentNormalCity.length : currentNormalCity.length + 1 }}">
+          <div class="npc-item npc-item-0 npc-exit" (click)="exit()" *ngIf="!isXiaoDao">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+          <div
+            *ngFor="let normalItem of currentNormalCity; let i = index"
+            class="npc-item npc-item-{{ isXiaoDao ? i : i + 1 }}"
+            (click)="handleNormalCityClick(normalItem.key, ssGroupMap[normalItem.key])">
+            <jh-btn-npc [name]="normalItem.name"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 光明顶 -->
+      @case (CityGroupEnum.GuangMingDing) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 峨眉后山 -->
+      @case (CityGroupEnum.EMeiHouShan) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 武当后山 -->
+      @case (CityGroupEnum.WuDangHouShan) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 真武殿 -->
+      @case (CityGroupEnum.ZhenWuDian) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 解剑池 -->
+      @case (CityGroupEnum.JieJianChi) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 思过崖 -->
+      @case (CityGroupEnum.SiGuoYa) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 正气堂 -->
+      @case (CityGroupEnum.ZhengQiTang) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 观日峰 -->
+      @case (CityGroupEnum.GuanRiFeng) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 少林后山 -->
+      @case (CityGroupEnum.ShaoLinHouShan) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+      <!-- 罗汉堂 -->
+      @case (CityGroupEnum.LuoHanTang) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 达摩院 -->
+      @case (CityGroupEnum.DaMoYuan) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 藏经阁 -->
+      @case (CityGroupEnum.CangJingGe) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 少林大殿 -->
+      @case (CityGroupEnum.ShaolinDaDian) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+
+      <!-- 紫禁城 -->
+      @case (CityGroupEnum.ZiJinCheng) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 杭州码头 -->
+      @case (CityGroupEnum.HangZhouMaTou) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 小岛码头 -->
+      @case (CityGroupEnum.XiaoDaoMaTou) {
+        <ng-container *ngTemplateOutlet="normalSS"></ng-container>
+      }
+      <!-- 小岛旷野 -->
+      @case (CityGroupEnum.XiaoDaoKuangYe) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+      }
+
+      <!-- 郊外 -->
+      @case (CityGroupEnum.JiaoWai) {
+        <ng-container *ngTemplateOutlet="ssJW"></ng-container>
+        <!-- <div class="npc-list npc-list-{{ currentSheShiRws.length + 3 + 4 }}">
+      <ng-container *ngTemplateOutlet="ssJWStatic"></ng-container>
+      <div class="npc-item npc-item-4" (click)="enterQi()">
+        <jh-btn-npc name="棋测试"></jh-btn-npc>
+      </div>
+      <div class="npc-item npc-item-5" (click)="enterHua()">
+        <jh-btn-npc name="画测试"></jh-btn-npc>
+      </div>
+      <div class="npc-item npc-item-6" (click)="enterQin()">
+        <jh-btn-npc name="琴测试"></jh-btn-npc>
+      </div>
+      <div class="npc-item npc-item-7" (click)="enterMG()">
+        <jh-btn-npc name="迷宫测试"></jh-btn-npc>
+      </div>
+    </div> -->
+      }
+      <!-- 当铺 -->
+      @case (CityGroupEnum.DangPu) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + (showDPLB ? 2 : 1) }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" *ngIf="showDPLB" (click)="rwLaoBan()">
+            <jh-btn-npc name="老板"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 武馆 -->
+      @case (CityGroupEnum.WuGuan) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + 2 }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="rwWuShi()">
+            <jh-btn-npc name="武师"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 赌场 -->
+      @case (CityGroupEnum.DuChang) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + 2 }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="rwZhuangJia()">
+            <jh-btn-npc name="庄家"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 客栈 -->
+      @case (CityGroupEnum.KeZhan) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + 3 }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="rwLaoBanNiang()">
+            <jh-btn-npc name="老板娘"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 2 }}" (click)="sleep()">
+            <jh-btn-npc name="休息"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 民家 -->
+      @case (CityGroupEnum.MinJia) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + (showMJZZ ? 2 : 1) }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div *ngIf="showMJZZ" class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="enterZZ()">
+            <jh-btn-npc name="自宅"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 酒馆 -->
+      @case (CityGroupEnum.JiuGuan) {
+        <div class="npc-list npc-list-{{ currentSheShiRws.length + 2 }}">
+          <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+          <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="rwDianXiaoEr()">
+            <jh-btn-npc name="店小二"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 乞讨 -->
+      @case (CityGroupEnum.QiTao) {
+        <div class="npc-list npc-list-1">
+          <div class="npc-item npc-item-0 npc-exit" (click)="startQT()">
+            <jh-btn-npc name="乞讨"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 自宅 -->
+      @case (CityGroupEnum.ZiZhai) {
+        <div class="npc-list npc-list-{{ showZZFQ ? 6 : 5 }}">
+          <div class="npc-item npc-item-0 npc-exit" (click)="exitZZ()">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-1" (click)="zzBJ()">
+            <jh-btn-npc name="搬家"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-2" (click)="zzXL()">
+            <jh-btn-npc name="修炼"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-3" (click)="zzXX()">
+            <jh-btn-npc name="休息"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-4" *ngIf="showZZFQ" (click)="zzFQ()">
+            <jh-btn-npc name="抚琴"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-{{ showZZFQ ? 5 : 4 }}" (click)="zzPY()">
+            <jh-btn-npc name="配药"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 自宅修炼 -->
+      @case (CityGroupEnum.ZiZhaiXL) {
+        <div class="npc-list npc-list-5">
+          <div class="npc-item npc-item-0 npc-exit" (click)="zzXLExit()">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-1" (click)="xlWithType('1n')">
+            <jh-btn-npc name="一年"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-2" (click)="xlWithType('1y')">
+            <jh-btn-npc name="一月"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-3" (click)="xlWithType('10t')">
+            <jh-btn-npc name="十天"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-4" (click)="xlWithType('1t')">
+            <jh-btn-npc name="一天"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 自宅搬家 -->
+      @case (CityGroupEnum.ZiZhaiBJ) {
+        <div class="npc-list npc-list-{{ allBJCities.length + 1 }}">
+          <div class="npc-item npc-item-0 npc-exit" (click)="zzXLExit()">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+          <div *ngFor="let bjCity of allBJCities; let i = index" class="npc-item npc-item-{{ i + 1 }}" (click)="zzBJTo(bjCity.id)">
+            <jh-btn-npc [name]="bjCity.name"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      <!-- 人物 -->
+      @case (CityGroupEnum.RenWu) {
+        <div class="npc-list npc-list-{{ currentRwActions.length + 4 }}">
+          <div class="npc-item npc-item-0 npc-exit" (click)="exitNpc()">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+          <div
+            *ngFor="let rwAction of currentRwActions; let i = index"
+            class="npc-item npc-item-{{ i + 1 }}"
+            (click)="handleRwClick(rwAction.key)">
+            <jh-btn-npc [name]="rwAction.name"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-{{ currentRwActions.length + 1 }}" (click)="fight()">
+            <jh-btn-npc name="挑战"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-{{ currentRwActions.length + 2 }}" (click)="openNpcPropsPop()">
+            <jh-btn-npc name="观察"></jh-btn-npc>
+          </div>
+          <div class="npc-item npc-item-{{ currentRwActions.length + 3 }}" (click)="openNpcTalkPop()">
+            <jh-btn-npc name="交谈"></jh-btn-npc>
+          </div>
+        </div>
+      }
+      @default {
+        <div class="npc-list npc-list-1">
+          <div class="npc-item npc-item-0 npc-exit" (click)="exit()">
+            <jh-btn-npc name="离开"></jh-btn-npc>
+          </div>
+        </div>
+      }
+    }
+    <ng-template #ssExit>
+      <div class="npc-item npc-item-0 npc-exit" (click)="exitSS()">
+        <jh-btn-npc name="离开"></jh-btn-npc>
+      </div>
+    </ng-template>
+    <ng-template #ssNpcs>
+      <ng-container *ngTemplateOutlet="ssExit"></ng-container>
+      <div
+        *ngFor="let npcItem of currentSheShiRws; let i = index"
+        class="npc-item npc-item-{{ i + 1 }}"
+        (click)="handleSheShiNpcClick(npcItem.subId)">
+        <jh-btn-npc [name]="npcItem.name"></jh-btn-npc>
+      </div>
+    </ng-template>
+    <ng-template #ssJWStatic>
+      <div class="npc-item npc-item-{{ currentSheShiRws.length + 1 }}" (click)="enterCy()">
+        <jh-btn-npc name="采药"></jh-btn-npc>
+      </div>
+      <div class="npc-item npc-item-{{ currentSheShiRws.length + 2 }}" (click)="enterXb()">
+        <jh-btn-npc name="寻宝"></jh-btn-npc>
+      </div>
+      <div class="npc-item npc-item-{{ currentSheShiRws.length + 3 }}" (click)="enterDl()">
+        <jh-btn-npc name="打猎"></jh-btn-npc>
+      </div>
+    </ng-template>
+    <ng-template #ssJW>
+      <div class="npc-list npc-list-{{ currentSheShiRws.length + 1 + 3 }}">
+        <ng-container *ngTemplateOutlet="ssNpcs"></ng-container>
+        <ng-container *ngTemplateOutlet="ssJWStatic"></ng-container>
+      </div>
+    </ng-template>
+    <ng-template #normalSS>
+      <div class="npc-list npc-list-{{ currentSheShiRws.length + 1 }}">
+        <ng-container *ngTemplateOutlet="ssExit"></ng-container>
+        <div
+          *ngFor="let npcItem of currentSheShiRws; let i = index"
+          class="npc-item npc-item-{{ i + 1 }}"
+          (click)="handleSheShiNpcClick(npcItem.subId)">
+          <jh-btn-npc [name]="npcItem.name"></jh-btn-npc>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="mask" *ngIf="progressData.show"></div>
+  <jh-ui-progress *ngIf="progressData.show" [value]="progressData.value"></jh-ui-progress>
+  <jh-ui-notice *ngIf="noticeData.show" [data]="noticeData" (click)="closeNotice()"></jh-ui-notice>
+</div>
+<jh-pop-menu *ngIf="showMenu" (closePop)="closeMenuPop()" (openPropsPop)="openPropsPop()"></jh-pop-menu>
+<jh-pop-props *ngIf="propsData.show" (closePop)="closePropsPop()" [npc]="propsData.npc" [showType]="propsData.type"></jh-pop-props>
+<jh-pop-talk *ngIf="talkData.show" (closePop)="closeNpcTalkPop()" [npc]="talkData.npc" [talkType]="talkData.talkType"></jh-pop-talk>
+<jh-pop-task *ngIf="t.taskData.show"></jh-pop-task>

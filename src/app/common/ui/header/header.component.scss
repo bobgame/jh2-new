@@ -1,0 +1,90 @@
+@import '../../../app.theme.scss';
+
+.header-con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  .avatar-con {
+    position: absolute;
+    z-index: 6;
+    left: 28px;
+    top: 20px;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border: 4px solid $borderColor;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(250, 235, 215, 0.2);
+
+    &:hover {
+      background-color: rgba(250, 235, 215, 0.8);
+      border-color: $borderActiveColor;
+    }
+
+    img {
+      margin-top: -4px;
+      width: 80%;
+      margin-left: 10%;
+      cursor: pointer;
+    }
+  }
+
+  .age-time-con {
+    position: absolute;
+    left: 116px;
+    top: 20px;
+    width: 260px;
+    font-size: 26px;
+    // background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+
+    .age {
+      color: #682218;
+    }
+  }
+
+  .icon-con {
+    position: absolute;
+    left: 116px;
+    top: 58px;
+    width: 260px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .icons {
+
+      display: flex;
+      align-items: center;
+
+      .icon {
+        font-size: 20px;
+        width: 23px;
+        height: 27px;
+        margin-right: 2px;
+        background-image: url('/assets/images/icon-hp.png');
+        background-size: 100% 100%;
+      }
+    }
+
+    .money {
+      color: #682218;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        width: 34px;
+        height: 18px;
+        margin-right: 4px;
+        background-image: url('/assets/images/icon-money-liang.png');
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../../app.theme.scss';
+
+.avatar {
+  position: absolute;
+  z-index: 5;
+  left: 6px;
+  top: 0;
+  width: 59px;
+  height: 86px;
+
+  img {
+    width: 100%;
+    // height: 100%;
+  }
+}
+
+.name {
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  top: 82px;
+  width: 70px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: $titleColor;
+}

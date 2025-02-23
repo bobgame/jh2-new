@@ -1,0 +1,28 @@
+<div class="cards-con" (click)="closeResult()">
+  <div class="title-contain">
+    <div class="title-con">
+      <div class="title">{{ '对弈' }}</div>
+    </div>
+  </div>
+  <div class="dl-con">
+    <div class="top-show">
+      <div class="first">{{ blackFirst ? '黑' : '白' }}先{{ isKill ? '杀' : '活' }}</div>
+      <div class="arrow-con">
+        <button class="label" (click)="checkResult()">落子</button>
+      </div>
+    </div>
+    <div class="dl-control-con">
+      <div class="dl-control-item img-x-{{qzItem.x}} img-y-{{qzItem.y}}" *ngFor="let qzItem of gzList"
+        (click)="qiClick(qzItem)">
+        <div class="img-con img-qz-{{qzItem.qz}} ">
+        </div>
+      </div>
+      <div class="qz-pos-con" [style.left.px]="14 + 27 * activeGz.x" [style.top.px]="14 + 27 * activeGz.y">
+        <div class="qz-pos"></div>
+      </div>
+    </div>
+  </div>
+  <div class="result-con" *ngIf="showQiResult" (click)="closeResult()">
+    {{result ? '对了' : '错了'}}
+  </div>
+</div>

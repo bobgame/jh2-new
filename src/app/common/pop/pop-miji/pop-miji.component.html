@@ -1,0 +1,50 @@
+<div class="pop-miji-con" role="dialog" tabindex="-1">
+  <div class="hole-container">
+    <div class="page-container">
+      <div class="pages-bg">
+        <div class="page-bg-frame frame-left"></div>
+        <div class="page-bg-frame frame-right"></div>
+        <div class="page-bg-frame frame-top"></div>
+        <div class="page-bg-frame frame-bottom"></div>
+        <div class="page-bg-chuangge left-top"></div>
+        <div class="page-bg-chuangge left-bottom"></div>
+        <div class="page-bg-chuangge right-top"></div>
+        <div class="page-bg-chuangge right-bottom"></div>
+        <div class="mask"></div>
+      </div>
+    </div>
+  </div>
+  <div class="items-con">
+    <div class="title-contain">
+      <div class="title-con">
+        <div class="title">秘籍</div>
+        <div class="close-con" (click)="close()">
+          <jh-ui-btn-close></jh-ui-btn-close>
+        </div>
+      </div>
+
+      <div class="item-detail-img-text-con" *ngIf="currentItem">
+        <div class="item-detail-desc">
+          <div class="item-detail-desc-text title">{{ currentItem.name }}</div>
+          <ng-scrollbar style="height: 60px" trackClass="scrollbar" viewClass="scrollbar-view" thumbClass="scrollbar-thumb">
+            <div class="item-detail-desc-text small">{{ currentItem.desc }}</div>
+          </ng-scrollbar>
+        </div>
+      </div>
+      <ng-scrollbar
+        style="position: absolute; width: 100%; height: 300px; bottom: 3px; left: 3px"
+        trackClass="scrollbar"
+        viewClass="scrollbar-view"
+        thumbClass="scrollbar-thumb">
+        <div class="item-list is-column-5" [class.is-column-6]="items.length > 30 && items.length <= 36">
+          <div class="wp-item" *ngFor="let item of items" (click)="selectItem(item)">
+            <div class="img-com" [class.is-selected]="currentItem && currentItem.id === item.id">
+              <img class="wp-item-img" src="/assets/images/avatar/mj/mj-{{ item.avatar }}.png" />
+            </div>
+          </div>
+          <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
+        </div>
+      </ng-scrollbar>
+    </div>
+  </div>
+</div>

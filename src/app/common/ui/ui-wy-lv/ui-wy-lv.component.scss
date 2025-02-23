@@ -1,0 +1,17 @@
+.wy-lv-con {
+  display: flex;
+  width: 100px;
+
+  .wy-lv-item {
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+    background-image: url('/assets/images/props/wy-lv-off.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    &.lv-active {
+      background-image: url('/assets/images/props/wy-lv-on.png');
+    }
+  }
+}

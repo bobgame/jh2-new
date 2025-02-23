@@ -1,0 +1,242 @@
+@import '../../app.theme.scss';
+
+.cards-con {
+  margin: 31px 20px;
+  width: 360px;
+  height: 410px;
+
+  .title-contain {
+    border: 4px solid $borderColor;
+    width: 360px;
+    height: 64px;
+    padding: 4px;
+    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-size: 4px 4px;
+    background-repeat: repeat;
+
+    .title-con {
+      width: 344px;
+      height: 48px;
+      background-image: url('/assets/images/choose/choose-title-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      padding-bottom: 8px;
+      color: $titleColor;
+      position: relative;
+    }
+
+    .close-con,
+    .back-con {
+      position: absolute;
+      right: 25px;
+      top: 4px;
+      background-color: antiquewhite;
+    }
+
+    .back-con {
+      left: 25px;
+      right: auto;
+    }
+  }
+
+  .card-cate-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    .card-cate-item {
+      width: 25%;
+      padding: 5px;
+      text-align: center;
+      margin-bottom: 10px;
+
+      .num {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border: 2px solid $borderColor;
+        background-color: #fef5e3;
+        margin-bottom: 4px;
+      }
+
+      .card {
+        width: 92%;
+        height: 104px;
+        margin-left: 5%;
+        border: 2px solid $borderDarkerColor;
+        border-radius: 4px;
+        padding: 6px;
+        cursor: pointer;
+
+        .line {
+          width: 100%;
+          height: 100%;
+          border-radius: 3px;
+          border: 2px solid rgba($color: #fff, $alpha: 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .text {
+            font-size: 24px;
+            width: 2px;
+            height: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  .card-list {
+    // overflow-y: auto;
+    padding-right: 7px;
+    // width: calc(100% + 6px);
+    // height: 350px;
+
+    .card-cate-item {
+      .card {
+        .line {
+          background-color: rgba($color: #fff, $alpha: 0.3);
+
+          img {
+            width: 90%;
+
+            &.card-img-zj,
+            &.card-img-rw,
+            &.card-img-wy {
+              width: calc(100% + 4px);
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .card-detail {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba($color: #000000, $alpha: 0.1);
+    }
+
+    .card-detail-con {
+      position: relative;
+      z-index: 2;
+      width: 80%;
+      padding: 0px 12px 12px;
+      background-color: #fff;
+      background-image: url('/assets/images/choose/choose-bg-sucai.png');
+      border: 4px solid $borderColor;
+      background-size: 4px 4px;
+      background-repeat: repeat;
+      border-radius: 4px;
+      font-size: 20px;
+
+      .card-detail-title {
+        width: 100%;
+        height: 48px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card-detail-title-text {
+          width: 100%;
+          text-align: center;
+        }
+
+        .card-detail-title-close {
+          position: absolute;
+          right: 4px;
+          top: 4px;
+          background-color: antiquewhite;
+        }
+      }
+
+      .card-detail-img-text-con {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        .card-detail-img {
+          width: 72px;
+          height: 98px;
+          margin-right: 10px;
+          border: 2px solid $borderDarkerColor;
+          border-radius: 4px;
+          padding: 6px;
+
+          .line {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            border: 2px solid rgba($color: #fff, $alpha: 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 90%;
+
+              &.card-img-zj,
+              &.card-img-rw,
+              &.card-img-wy {
+                width: calc(100% + 4px);
+              }
+            }
+          }
+        }
+
+        .card-detail-desc {
+          width: calc(100% - 82px);
+          min-height: 130px;
+          background-color: #faf1e1;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+  ::ng-deep {
+    .scrollbar {
+      background-color: rgba(198, 176, 152, 0.669);
+      border-radius: 4px;
+      width: 8px !important;
+    }
+
+    .scrollbar-thumb {
+      background-color: #e7cfb7;
+      border: 2px solid #977c51;
+    }
+
+    .scrollbar-control {
+      justify-content: flex-end;
+    }
+  }
+}
