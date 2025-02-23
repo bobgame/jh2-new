@@ -9,11 +9,10 @@ import { environment } from '../../../environments/environment'
 import { GameoverEnum, gameoverTexts } from '../../data/gameover'
 
 @Component({
-  selector: 'jh-home',
-  standalone: true,
-  imports: [CommonModule, HomeFanComponent, HomeBgComponent, HomeEndComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'jh-home',
+    imports: [CommonModule, HomeFanComponent, HomeBgComponent, HomeEndComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
   constructor(public g: GlobalService) {}

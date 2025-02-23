@@ -11,11 +11,10 @@ import { TaskTalkIds } from '../../../data/tasks/task.enum'
 import { KeyIds } from '../../../data/tasks/keys.interface'
 
 @Component({
-  selector: 'jh-qi',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './qi.component.html',
-  styleUrl: './qi.component.scss',
+    selector: 'jh-qi',
+    imports: [CommonModule],
+    templateUrl: './qi.component.html',
+    styleUrl: './qi.component.scss'
 })
 export class QiComponent implements OnInit {
   constructor(

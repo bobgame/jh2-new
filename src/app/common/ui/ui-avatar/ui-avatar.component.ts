@@ -3,11 +3,10 @@ import { RwIdEnum } from '../../../constants/enums/rw.enum'
 import { GlobalService } from '../../../services/global.service'
 
 @Component({
-  selector: 'jh-ui-avatar',
-  standalone: true,
-  imports: [],
-  templateUrl: './ui-avatar.component.html',
-  styleUrl: './ui-avatar.component.scss',
+    selector: 'jh-ui-avatar',
+    imports: [],
+    templateUrl: './ui-avatar.component.html',
+    styleUrl: './ui-avatar.component.scss'
 })
 export class UiAvatarComponent implements OnInit, OnChanges {
   constructor(private g: GlobalService) {}

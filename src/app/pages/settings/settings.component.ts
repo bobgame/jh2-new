@@ -10,11 +10,10 @@ import { settingsBgItems } from '../../data/settings'
 import { SettingsService } from '../../services/settings.service'
 
 @Component({
-  selector: 'jh-settings',
-  standalone: true,
-  imports: [CommonModule, ClipboardModule, UiBtnBackComponent, NgScrollbarModule],
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.scss',
+    selector: 'jh-settings',
+    imports: [CommonModule, ClipboardModule, UiBtnBackComponent, NgScrollbarModule],
+    templateUrl: './settings.component.html',
+    styleUrl: './settings.component.scss'
 })
 export class SettingsComponent implements OnInit {
   constructor(

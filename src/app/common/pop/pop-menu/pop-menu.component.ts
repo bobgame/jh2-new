@@ -5,7 +5,6 @@ import { PageEnum } from '../../../constants/enums/base.enum'
 
 @Component({
   selector: 'jh-pop-menu',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './pop-menu.component.html',
   styleUrl: './pop-menu.component.scss',

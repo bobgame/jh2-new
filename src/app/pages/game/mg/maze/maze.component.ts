@@ -7,11 +7,10 @@ import { clone } from '../../../../units/Base'
 import { LongPressDirective } from '../../../../directives/long-press.directive'
 
 @Component({
-  selector: 'jh-maze',
-  templateUrl: './maze.component.html',
-  styleUrls: ['./maze.component.scss'],
-  imports: [CommonModule, FormsModule, LongPressDirective],
-  standalone: true,
+    selector: 'jh-maze',
+    templateUrl: './maze.component.html',
+    styleUrls: ['./maze.component.scss'],
+    imports: [CommonModule, FormsModule, LongPressDirective]
 })
 export class MazeComponent implements OnInit, AfterViewInit {
   row = 8

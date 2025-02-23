@@ -13,11 +13,10 @@ import { environment } from '../../../../environments/environment'
 import { CityGroupEnum } from '../../../constants/enums/base.enum'
 
 @Component({
-  selector: 'jh-pop-talk',
-  standalone: true,
-  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
-  templateUrl: './pop-talk.component.html',
-  styleUrl: './pop-talk.component.scss',
+    selector: 'jh-pop-talk',
+    imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
+    templateUrl: './pop-talk.component.html',
+    styleUrl: './pop-talk.component.scss'
 })
 export class PopTalkComponent implements OnInit {
   constructor(private g: GlobalService) {}

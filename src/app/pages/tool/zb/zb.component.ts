@@ -6,11 +6,10 @@ import { UiWyLvComponent } from '../../../common/ui/ui-wy-lv/ui-wy-lv.component'
 import { PersonJn, PersonWy } from '../../../data/hero'
 
 @Component({
-  selector: 'jh-zb',
-  standalone: true,
-  imports: [CommonModule, UiWyLvComponent],
-  templateUrl: './zb.component.html',
-  styleUrl: './zb.component.scss',
+    selector: 'jh-zb',
+    imports: [CommonModule, UiWyLvComponent],
+    templateUrl: './zb.component.html',
+    styleUrl: './zb.component.scss'
 })
 export class ZBComponent implements OnInit {
   constructor(public g: GlobalService) {}

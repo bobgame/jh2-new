@@ -17,11 +17,10 @@ import { UiProgressOneComponent } from '../../common/ui/ui-progress-one/ui-progr
 import { environment } from '../../../environments/environment'
 
 @Component({
-  selector: 'jh-pei-yao',
-  standalone: true,
-  imports: [CommonModule, UiFrameComponent, UiBtnCloseComponent, NgScrollbarModule, PopChooseComponent, IntPipe, UiProgressOneComponent],
-  templateUrl: './pei-yao.component.html',
-  styleUrl: './pei-yao.component.scss',
+    selector: 'jh-pei-yao',
+    imports: [CommonModule, UiFrameComponent, UiBtnCloseComponent, NgScrollbarModule, PopChooseComponent, IntPipe, UiProgressOneComponent],
+    templateUrl: './pei-yao.component.html',
+    styleUrl: './pei-yao.component.scss'
 })
 export class PeiYaoComponent implements OnInit {
   constructor(public g: GlobalService) {}

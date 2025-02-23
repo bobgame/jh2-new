@@ -8,11 +8,10 @@ import { MapService } from '../../services/map.service'
 import { CityIdEnum } from '../../constants/enums/city.enum'
 
 @Component({
-  selector: 'jh-map',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './map.component.html',
-  styleUrl: './map.component.scss',
+    selector: 'jh-map',
+    imports: [CommonModule],
+    templateUrl: './map.component.html',
+    styleUrl: './map.component.scss'
 })
 export class MapComponent implements OnInit {
   constructor(

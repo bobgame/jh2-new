@@ -3,11 +3,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { SplitNamePipe } from '../../../pipes/split-name.pipe'
 
 @Component({
-  selector: 'jh-home-end',
-  standalone: true,
-  imports: [CommonModule, SplitNamePipe],
-  templateUrl: './home-end.component.html',
-  styleUrl: './home-end.component.scss',
+    selector: 'jh-home-end',
+    imports: [CommonModule, SplitNamePipe],
+    templateUrl: './home-end.component.html',
+    styleUrl: './home-end.component.scss'
 })
 export class HomeEndComponent implements OnInit {
   @Output() backHome = new EventEmitter()

@@ -9,11 +9,10 @@ import { CityIdEnum } from '../../../constants/enums/city.enum'
 import { CityIdEnumSp, jiaoWaiCityMap } from '../../city/city-data'
 import { KeyIds } from '../../../data/tasks/keys.interface'
 @Component({
-  selector: 'jh-dl',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './dl.component.html',
-  styleUrl: './dl.component.scss',
+    selector: 'jh-dl',
+    imports: [CommonModule],
+    templateUrl: './dl.component.html',
+    styleUrl: './dl.component.scss'
 })
 export class DlComponent implements OnInit, OnDestroy {
   constructor(

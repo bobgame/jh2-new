@@ -2,11 +2,10 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
 import { clone } from '../../../units/Base'
 
 @Component({
-  selector: 'jh-ui-tz',
-  standalone: true,
-  imports: [],
-  templateUrl: './ui-tz.component.html',
-  styleUrl: './ui-tz.component.scss',
+    selector: 'jh-ui-tz',
+    imports: [],
+    templateUrl: './ui-tz.component.html',
+    styleUrl: './ui-tz.component.scss'
 })
 export class UiTzComponent implements OnChanges {
   @Input() tzData = {

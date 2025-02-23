@@ -15,11 +15,10 @@ import { CityIdEnumSp, jiaoWaiCityMap } from '../../city/city-data'
 import { MazeComponent } from './maze/maze.component'
 
 @Component({
-  selector: 'jh-mg',
-  standalone: true,
-  imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent, MazeComponent],
-  templateUrl: './mg.component.html',
-  styleUrl: './mg.component.scss',
+    selector: 'jh-mg',
+    imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent, MazeComponent],
+    templateUrl: './mg.component.html',
+    styleUrl: './mg.component.scss'
 })
 export class MgComponent implements OnInit {
   constructor(

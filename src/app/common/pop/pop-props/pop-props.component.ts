@@ -10,11 +10,10 @@ import { defaultRws } from '../../../data/rw'
 import { HeartPipe } from '../../../pipes/heart.pipe'
 
 @Component({
-  selector: 'jh-pop-props',
-  standalone: true,
-  imports: [CommonModule, UiAvatarComponent, UiWyLvComponent, UiBtnCloseComponent, HeartPipe],
-  templateUrl: './pop-props.component.html',
-  styleUrl: './pop-props.component.scss',
+    selector: 'jh-pop-props',
+    imports: [CommonModule, UiAvatarComponent, UiWyLvComponent, UiBtnCloseComponent, HeartPipe],
+    templateUrl: './pop-props.component.html',
+    styleUrl: './pop-props.component.scss'
 })
 export class PopPropsComponent implements OnInit {
   constructor(public g: GlobalService) {}

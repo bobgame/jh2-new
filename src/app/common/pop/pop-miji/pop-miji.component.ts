@@ -6,11 +6,10 @@ import { NgScrollbarModule } from 'ngx-scrollbar'
 import { IntPipe } from '../../../pipes/int.pipe'
 
 @Component({
-  selector: 'jh-pop-miji',
-  standalone: true,
-  imports: [CommonModule, UiBtnCloseComponent, NgScrollbarModule, IntPipe],
-  templateUrl: './pop-miji.component.html',
-  styleUrl: './pop-miji.component.scss',
+    selector: 'jh-pop-miji',
+    imports: [CommonModule, UiBtnCloseComponent, NgScrollbarModule, IntPipe],
+    templateUrl: './pop-miji.component.html',
+    styleUrl: './pop-miji.component.scss'
 })
 export class PopMijiComponent implements OnInit {
   constructor(public g: GlobalService) {}
