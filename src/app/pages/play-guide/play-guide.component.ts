@@ -12,10 +12,10 @@ import { TaskAnswerItem } from '../../data/tasks/task.interface'
 import { UiCityBgComponent } from '../../common/ui/ui-city-bg/ui-city-bg.component'
 
 @Component({
-    selector: 'jh-play-guide',
-    imports: [CommonModule, UiAvatarComponent, UiCityBgComponent, UiTipArrowDownComponent, PopChooseComponent],
-    templateUrl: './play-guide.component.html',
-    styleUrl: './play-guide.component.scss'
+  selector: 'jh-play-guide',
+  imports: [CommonModule, UiAvatarComponent, UiCityBgComponent, UiTipArrowDownComponent, PopChooseComponent],
+  templateUrl: './play-guide.component.html',
+  styleUrl: './play-guide.component.scss',
 })
 export class PlayGuideComponent implements OnInit {
   constructor(private g: GlobalService) {}

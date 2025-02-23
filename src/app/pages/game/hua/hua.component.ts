@@ -11,10 +11,10 @@ import { AnswerItem } from '../../../constants/interfaces/base.interface'
 import { TaskService } from '../../../services/task.service'
 import { KeyIds } from '../../../data/tasks/keys.interface'
 @Component({
-    selector: 'jh-hua',
-    imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent],
-    templateUrl: './hua.component.html',
-    styleUrl: './hua.component.scss'
+  selector: 'jh-hua',
+  imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent],
+  templateUrl: './hua.component.html',
+  styleUrl: './hua.component.scss',
 })
 export class HuaComponent implements OnInit {
   constructor(

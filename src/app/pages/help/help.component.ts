@@ -7,10 +7,10 @@ import { PageEnum } from '../../constants/enums/base.enum'
 import { NgScrollbarModule } from 'ngx-scrollbar'
 
 @Component({
-    selector: 'jh-help',
-    imports: [CommonModule, ClipboardModule, UiBtnBackComponent, NgScrollbarModule],
-    templateUrl: './help.component.html',
-    styleUrl: './help.component.scss'
+  selector: 'jh-help',
+  imports: [CommonModule, ClipboardModule, UiBtnBackComponent, NgScrollbarModule],
+  templateUrl: './help.component.html',
+  styleUrl: './help.component.scss',
 })
 export class HelpComponent {
   constructor(

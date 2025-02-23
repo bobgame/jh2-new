@@ -17,10 +17,10 @@ import { AnswerItem } from '../../../constants/interfaces/base.interface'
 import { environment } from '../../../../environments/environment'
 
 @Component({
-    selector: 'jh-pop-items',
-    imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent, NgScrollbarModule, IntPipe],
-    templateUrl: './pop-items.component.html',
-    styleUrl: './pop-items.component.scss'
+  selector: 'jh-pop-items',
+  imports: [CommonModule, UiBtnCloseComponent, PopChooseComponent, NgScrollbarModule, IntPipe],
+  templateUrl: './pop-items.component.html',
+  styleUrl: './pop-items.component.scss',
 })
 export class PopItemsComponent implements OnInit {
   constructor(

@@ -11,10 +11,10 @@ import { NgScrollbarModule } from 'ngx-scrollbar'
 import { clone } from '../../units/Base'
 
 @Component({
-    selector: 'jh-sl',
-    imports: [CommonModule, UiFrameComponent, ShowTimePipe, PopChooseComponent, NgScrollbarModule],
-    templateUrl: './sl.component.html',
-    styleUrl: './sl.component.scss'
+  selector: 'jh-sl',
+  imports: [CommonModule, UiFrameComponent, ShowTimePipe, PopChooseComponent, NgScrollbarModule],
+  templateUrl: './sl.component.html',
+  styleUrl: './sl.component.scss',
 })
 export class SlComponent implements OnInit {
   constructor(public g: GlobalService) {}

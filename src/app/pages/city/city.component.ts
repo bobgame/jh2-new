@@ -31,22 +31,22 @@ import { WpIdEnum } from '../../constants/enums/wp.enum'
 import { getTimeDay } from '../../units/time'
 
 @Component({
-    selector: 'jh-city',
-    imports: [
-        CommonModule,
-        UiCityBgComponent,
-        HeaderComponent,
-        PopMenuComponent,
-        BtnNpcComponent,
-        PopPropsComponent,
-        PopTalkComponent,
-        CityNamePipe,
-        UiProgressComponent,
-        UiNoticeComponent,
-        PopTaskComponent,
-    ],
-    templateUrl: './city.component.html',
-    styleUrl: './city.component.scss'
+  selector: 'jh-city',
+  imports: [
+    CommonModule,
+    UiCityBgComponent,
+    HeaderComponent,
+    PopMenuComponent,
+    BtnNpcComponent,
+    PopPropsComponent,
+    PopTalkComponent,
+    CityNamePipe,
+    UiProgressComponent,
+    UiNoticeComponent,
+    PopTaskComponent,
+  ],
+  templateUrl: './city.component.html',
+  styleUrl: './city.component.scss',
 })
 export class CityComponent implements OnInit, OnDestroy {
   constructor(

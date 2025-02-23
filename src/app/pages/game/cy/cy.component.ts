@@ -13,10 +13,10 @@ import { KeyIds } from '../../../data/tasks/keys.interface'
 import { TaskTalkIds } from '../../../data/tasks/task.enum'
 
 @Component({
-    selector: 'jh-cy',
-    imports: [CommonModule, UiFrameComponent],
-    templateUrl: './cy.component.html',
-    styleUrl: './cy.component.scss'
+  selector: 'jh-cy',
+  imports: [CommonModule, UiFrameComponent],
+  templateUrl: './cy.component.html',
+  styleUrl: './cy.component.scss',
 })
 export class CyComponent implements OnInit {
   constructor(

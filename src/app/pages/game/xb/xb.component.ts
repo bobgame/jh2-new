@@ -12,10 +12,10 @@ import { environment } from '../../../../environments/environment'
 import { KeyIds } from '../../../data/tasks/keys.interface'
 
 @Component({
-    selector: 'jh-xb',
-    imports: [CommonModule, UiFrameComponent],
-    templateUrl: './xb.component.html',
-    styleUrl: './xb.component.scss'
+  selector: 'jh-xb',
+  imports: [CommonModule, UiFrameComponent],
+  templateUrl: './xb.component.html',
+  styleUrl: './xb.component.scss',
 })
 export class XbComponent implements OnInit {
   constructor(

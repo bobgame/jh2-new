@@ -8,10 +8,10 @@ import { TaskService } from '../../../services/task.service'
 import { KeyIds } from '../../../data/tasks/keys.interface'
 
 @Component({
-    selector: 'jh-qin',
-    imports: [CommonModule],
-    templateUrl: './qin.component.html',
-    styleUrl: './qin.component.scss'
+  selector: 'jh-qin',
+  imports: [CommonModule],
+  templateUrl: './qin.component.html',
+  styleUrl: './qin.component.scss',
 })
 export class QinComponent implements OnInit, OnDestroy {
   constructor(

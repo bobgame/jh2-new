@@ -29,10 +29,10 @@ import { getTimeDay } from '../../../units/time'
 import { TextColorPipe } from '../../../pipes/text-color.pipe'
 
 @Component({
-    selector: 'jh-pop-task',
-    imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent, TextColorPipe],
-    templateUrl: './pop-task.component.html',
-    styleUrl: './pop-task.component.scss'
+  selector: 'jh-pop-task',
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent, TextColorPipe],
+  templateUrl: './pop-task.component.html',
+  styleUrl: './pop-task.component.scss',
 })
 export class PopTaskComponent implements OnInit, OnDestroy {
   constructor(

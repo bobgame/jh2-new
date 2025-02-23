@@ -1,46 +1,47 @@
-{
-  "root": true,
-  "ignorePatterns": [
+// ESLint 配置文件，采用 CommonJS 模块格式
+module.exports = {
+  root: true,
+  ignorePatterns: [
     "projects/**/*"
   ],
-  "overrides": [
+  overrides: [
     {
-      "files": [
+      files: [
         "*.ts"
       ],
-      "parserOptions": {
-        "project": [
+      parserOptions: {
+        project: [
           "tsconfig.json"
         ],
-        "createDefaultProgram": true
+        createDefaultProgram: true
       },
-      "extends": [
+      extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
       ],
-      "rules": {
-        "indent": [
+      rules: {
+        indent: [
           2,
           2,
           {
-            "SwitchCase": 1
+            SwitchCase: 1
           }
         ],
         "comma-spacing": [
           "error",
           {
-            "before": false,
-            "after": true
+            before: false,
+            after: true
           }
         ],
-        "quotes": [
+        quotes: [
           "error",
           "single",
           {
-            "allowTemplateLiterals": true
+            allowTemplateLiterals: true
           }
         ],
         "comma-dangle": [
@@ -50,16 +51,16 @@
         "space-before-function-paren": [
           "error",
           {
-            "anonymous": "always",
-            "named": "never",
-            "asyncArrow": "always"
+            anonymous: "always",
+            named: "never",
+            asyncArrow: "always"
           }
         ],
         "@typescript-eslint/no-this-alias": [
           "error",
           {
-            "allowDestructuring": false,
-            "allowedNames": [
+            allowDestructuring: false,
+            allowedNames: [
               "self"
             ]
           }
@@ -67,23 +68,23 @@
         "@angular-eslint/directive-selector": [
           "error",
           {
-            "type": "attribute",
-            "prefix": [
+            type: "attribute",
+            prefix: [
               "app",
               "jh"
             ],
-            "style": "camelCase"
+            style: "camelCase"
           }
         ],
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": "element",
-            "prefix": [
+            type: "element",
+            prefix: [
               "app",
               "jh"
             ],
-            "style": "kebab-case"
+            style: "kebab-case"
           }
         ],
         "@typescript-eslint/no-unsafe-function-type": "off",
@@ -94,14 +95,14 @@
         "no-empty": "off",
         "no-constant-condition": "warn",
         "@angular-eslint/no-empty-lifecycle-method": "off",
-        "semi": [
+        semi: [
           "error",
           "never"
         ],
         "no-multi-spaces": [
           "error",
           {
-            "ignoreEOLComments": true
+            ignoreEOLComments: true
           }
         ],
         "end-of-line": "off",
@@ -109,7 +110,7 @@
           "error",
           "always",
           {
-            "markers": [
+            markers: [
               "/"
             ]
           }
@@ -124,8 +125,8 @@
         "keyword-spacing": [
           "error",
           {
-            "before": true,
-            "after": true
+            before: true,
+            after: true
           }
         ],
         "space-before-blocks": [
@@ -135,20 +136,20 @@
         "key-spacing": [
           "error",
           {
-            "beforeColon": false,
-            "afterColon": true
+            beforeColon: false,
+            afterColon: true
           }
         ]
       }
     },
     {
-      "files": [
+      files: [
         "*.html"
       ],
-      "extends": [
+      extends: [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      rules: {}
     }
   ]
-}
+};

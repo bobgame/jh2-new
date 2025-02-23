@@ -3,10 +3,10 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core'
 import { getWyLv } from '../../../units/Base'
 
 @Component({
-    selector: 'jh-ui-wy-lv',
-    imports: [CommonModule],
-    templateUrl: './ui-wy-lv.component.html',
-    styleUrl: './ui-wy-lv.component.scss'
+  selector: 'jh-ui-wy-lv',
+  imports: [CommonModule],
+  templateUrl: './ui-wy-lv.component.html',
+  styleUrl: './ui-wy-lv.component.scss',
 })
 export class UiWyLvComponent implements OnInit, OnChanges {
   /** lv should be 0 1 2 3 */

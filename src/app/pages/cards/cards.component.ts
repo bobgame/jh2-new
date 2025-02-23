@@ -18,10 +18,10 @@ import { defaultChs } from '../../data/ch'
 import { environment } from '../../../environments/environment'
 
 @Component({
-    selector: 'jh-cards',
-    imports: [CommonModule, NgScrollbarModule, UiBtnCloseComponent, UiBtnBackComponent],
-    templateUrl: './cards.component.html',
-    styleUrl: './cards.component.scss'
+  selector: 'jh-cards',
+  imports: [CommonModule, NgScrollbarModule, UiBtnCloseComponent, UiBtnBackComponent],
+  templateUrl: './cards.component.html',
+  styleUrl: './cards.component.scss',
 })
 export class CardsComponent implements OnInit {
   constructor(private g: GlobalService) {}

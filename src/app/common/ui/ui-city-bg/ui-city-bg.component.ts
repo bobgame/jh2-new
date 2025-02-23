@@ -6,10 +6,10 @@ import { GlobalService } from '../../../services/global.service'
 import { citySheShiImages } from '../../../pages/city/city-data'
 
 @Component({
-    selector: 'jh-ui-city-bg',
-    imports: [CommonModule, CityNamePipe],
-    templateUrl: './ui-city-bg.component.html',
-    styleUrl: './ui-city-bg.component.scss'
+  selector: 'jh-ui-city-bg',
+  imports: [CommonModule, CityNamePipe],
+  templateUrl: './ui-city-bg.component.html',
+  styleUrl: './ui-city-bg.component.scss',
 })
 export class UiCityBgComponent {
   constructor(public g: GlobalService) {}

@@ -8,10 +8,10 @@ import { GlobalService } from '../../../services/global.service'
 declare let cordova: any
 
 @Component({
-    selector: 'jh-pop-update',
-    imports: [CommonModule],
-    templateUrl: './pop-update.component.html',
-    styleUrl: './pop-update.component.scss'
+  selector: 'jh-pop-update',
+  imports: [CommonModule],
+  templateUrl: './pop-update.component.html',
+  styleUrl: './pop-update.component.scss',
 })
 export class PopUpdateComponent {
   currentVersion = packageJson.version

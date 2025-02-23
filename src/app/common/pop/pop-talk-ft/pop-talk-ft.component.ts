@@ -10,10 +10,10 @@ import { UiCityBgComponent } from '../../ui/ui-city-bg/ui-city-bg.component'
 import { FightTalkData } from '../../../constants/interfaces/base.interface'
 
 @Component({
-    selector: 'jh-pop-talk-ft',
-    imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
-    templateUrl: './pop-talk-ft.component.html',
-    styleUrl: './pop-talk-ft.component.scss'
+  selector: 'jh-pop-talk-ft',
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
+  templateUrl: './pop-talk-ft.component.html',
+  styleUrl: './pop-talk-ft.component.scss',
 })
 export class PopTalkFtComponent implements OnInit {
   constructor(private g: GlobalService) {}

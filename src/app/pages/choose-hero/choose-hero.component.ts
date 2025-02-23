@@ -16,10 +16,10 @@ import { CityIdEnum } from '../../constants/enums/city.enum'
 import { RwIdEnum } from '../../constants/enums/rw.enum'
 
 @Component({
-    selector: 'jh-choose-hero',
-    imports: [CommonModule, PopChooseComponent, UiBtnBackComponent],
-    templateUrl: './choose-hero.component.html',
-    styleUrl: './choose-hero.component.scss'
+  selector: 'jh-choose-hero',
+  imports: [CommonModule, PopChooseComponent, UiBtnBackComponent],
+  templateUrl: './choose-hero.component.html',
+  styleUrl: './choose-hero.component.scss',
 })
 export class ChooseHeroComponent implements OnInit {
   constructor(

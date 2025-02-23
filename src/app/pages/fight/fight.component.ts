@@ -21,10 +21,10 @@ import { KeyIds } from '../../data/tasks/keys.interface'
 import { Subscription } from 'rxjs'
 
 @Component({
-    selector: 'jh-fight',
-    imports: [CommonModule, CountUpModule, UiFtCardComponent, PopTalkFtComponent],
-    templateUrl: './fight.component.html',
-    styleUrl: './fight.component.scss'
+  selector: 'jh-fight',
+  imports: [CommonModule, CountUpModule, UiFtCardComponent, PopTalkFtComponent],
+  templateUrl: './fight.component.html',
+  styleUrl: './fight.component.scss',
 })
 export class FightComponent implements OnInit, OnDestroy {
   baseFight: FightItem = {

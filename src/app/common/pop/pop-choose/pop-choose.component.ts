@@ -5,10 +5,10 @@ import { TaskAnswerItem } from '../../../data/tasks/task.interface'
 import { TextColorPipe } from '../../../pipes/text-color.pipe'
 
 @Component({
-    selector: 'jh-pop-choose',
-    imports: [CommonModule, TextColorPipe],
-    templateUrl: './pop-choose.component.html',
-    styleUrl: './pop-choose.component.scss'
+  selector: 'jh-pop-choose',
+  imports: [CommonModule, TextColorPipe],
+  templateUrl: './pop-choose.component.html',
+  styleUrl: './pop-choose.component.scss',
 })
 export class PopChooseComponent {
   @Input() title = ''

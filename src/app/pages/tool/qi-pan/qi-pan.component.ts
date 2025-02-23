@@ -7,10 +7,10 @@ import { exitQa } from '../../../data/base'
 import { QiData, allQiData } from '../../game/qi/qi-data'
 
 @Component({
-    selector: 'jh-qi-pan',
-    imports: [CommonModule],
-    templateUrl: './qi-pan.component.html',
-    styleUrl: './qi-pan.component.scss'
+  selector: 'jh-qi-pan',
+  imports: [CommonModule],
+  templateUrl: './qi-pan.component.html',
+  styleUrl: './qi-pan.component.scss',
 })
 export class QiPanComponent implements OnInit {
   constructor(private g: GlobalService) {}

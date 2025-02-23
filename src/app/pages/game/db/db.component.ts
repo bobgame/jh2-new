@@ -19,10 +19,10 @@ import { KeyIds } from '../../../data/tasks/keys.interface'
 import { RwIdEnum } from '../../../constants/enums/rw.enum'
 
 @Component({
-    selector: 'jh-db',
-    imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent, UiTzComponent, IntPipe],
-    templateUrl: './db.component.html',
-    styleUrl: './db.component.scss'
+  selector: 'jh-db',
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent, UiTzComponent, IntPipe],
+  templateUrl: './db.component.html',
+  styleUrl: './db.component.scss',
 })
 export class DbComponent implements OnInit {
   constructor(
