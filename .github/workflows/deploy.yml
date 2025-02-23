@@ -1,0 +1,31 @@
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 当main分支有推送时触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 使用Ubuntu环境
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3 # 检出代码
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3 # 设置Node.js环境
+        with:
+          node-version: 22 # 指定Node.js版本
+
+      - name: Install dependencies
+        run: npm ci # 安装项目依赖
+
+      - name: Build Angular app
+        run: npm run build # 构建Angular项目
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # 使用第三方Action部署到GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的令牌
+          publish_dir: ./dist/jh2 # 指定要部署的文件夹，<your-project-name>替换为你的项目名
