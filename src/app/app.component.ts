@@ -25,13 +25,13 @@ import { PopItemsComponent } from './common/pop/pop-items/pop-items.component'
 import { PopMijiComponent } from './common/pop/pop-miji/pop-miji.component'
 import { MgComponent } from './pages/game/mg/mg.component'
 import { ClipboardModule, ClipboardService } from 'ngx-clipboard'
-import { QiPanComponent } from './pages/tool/qi-pan/qi-pan.component'
 import { DbComponent } from './pages/game/db/db.component'
 import { PeiYaoComponent } from './pages/pei-yao/pei-yao.component'
 import { SlComponent } from './pages/sl/sl.component'
 import { UiToastComponent } from './common/ui/ui-toast/ui-toast.component'
 import { JhToastService } from './services/jh-toast.service'
-import { ZBComponent } from './pages/tool/zb/zb.component'
+// import { QiPanComponent } from './pages/tool/qi-pan/qi-pan.component'
+// import { ZBComponent } from './pages/tool/zb/zb.component'
 import { environment } from '../environments/environment'
 import { taskTalks } from './data/tasks/task-talks'
 import { TaskAnswerActions, TaskTalkIds } from './data/tasks/task.enum'
@@ -80,8 +80,8 @@ declare let navigator: any
     PopItemsComponent,
     PopMijiComponent,
     PeiYaoComponent,
-    QiPanComponent,
-    ZBComponent,
+    // QiPanComponent,
+    // ZBComponent,
     PopChooseComponent,
     PopUpdateComponent,
     UiToastComponent,

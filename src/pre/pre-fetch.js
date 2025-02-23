@@ -14,9 +14,9 @@ function preFetchImageLoadHandler(e) {
   preloadImageDoneNum++;
   var tempPre =
     Math.floor((preloadImageDoneNum * 1000) / (allPreImg.length - 6)) / 10;
-  if (tempPre >= 92 && tempPre < 95) {
+  if (tempPre >= 85 && tempPre < 90) {
     tempPre = 95;
-  } else if (tempPre >= 95) {
+  } else if (tempPre >= 90) {
     tempPre = 100;
   }
   preFetchImageDoneNumPer = tempPre;

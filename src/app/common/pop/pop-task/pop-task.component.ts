@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common'
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core'
-import { PopChooseComponent } from '../pop-choose/pop-choose.component'
 import { UiAvatarComponent } from '../../ui/ui-avatar/ui-avatar.component'
 import { UiCityBgComponent } from '../../ui/ui-city-bg/ui-city-bg.component'
 import { UiTipArrowDownComponent } from '../../ui/ui-tip-arrow-down/ui-tip-arrow-down.component'
@@ -30,7 +29,7 @@ import { TextColorPipe } from '../../../pipes/text-color.pipe'
 
 @Component({
   selector: 'jh-pop-task',
-  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent, TextColorPipe],
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, UiCityBgComponent, TextColorPipe],
   templateUrl: './pop-task.component.html',
   styleUrl: './pop-task.component.scss',
 })

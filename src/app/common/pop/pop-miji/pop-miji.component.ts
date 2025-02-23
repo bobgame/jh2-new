@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common'
 import { GlobalService } from '../../../services/global.service'
 import { UiBtnCloseComponent } from '../../ui/ui-btn-close/ui-btn-close.component'
 import { NgScrollbarModule } from 'ngx-scrollbar'
-import { IntPipe } from '../../../pipes/int.pipe'
 
 @Component({
   selector: 'jh-pop-miji',
-  imports: [CommonModule, UiBtnCloseComponent, NgScrollbarModule, IntPipe],
+  imports: [CommonModule, UiBtnCloseComponent, NgScrollbarModule],
   templateUrl: './pop-miji.component.html',
   styleUrl: './pop-miji.component.scss',
 })

@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { UiAvatarComponent } from '../../../common/ui/ui-avatar/ui-avatar.component'
 import { UiTipArrowDownComponent } from '../../../common/ui/ui-tip-arrow-down/ui-tip-arrow-down.component'
 import { clone, rand, randInt, replaceTalk, sampleItem } from '../../../units/Base'
-import { PopChooseComponent } from '../../../common/pop/pop-choose/pop-choose.component'
 import { GlobalService } from '../../../services/global.service'
 import { BasicTalkItem, basicFullTalks, basicHighTalks, basicLowTalks, basicMidTalks } from '../../../data/talk-basic'
 import { UiCityBgComponent } from '../../ui/ui-city-bg/ui-city-bg.component'
@@ -14,7 +13,7 @@ import { CityGroupEnum } from '../../../constants/enums/base.enum'
 
 @Component({
   selector: 'jh-pop-talk',
-  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, UiCityBgComponent],
   templateUrl: './pop-talk.component.html',
   styleUrl: './pop-talk.component.scss',
 })

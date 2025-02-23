@@ -3,14 +3,12 @@ import { Cell, Maze, keyboardMap } from './models'
 import { environment } from '../../../../../environments/environment'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { clone } from '../../../../units/Base'
-import { LongPressDirective } from '../../../../directives/long-press.directive'
 
 @Component({
   selector: 'jh-maze',
   templateUrl: './maze.component.html',
   styleUrls: ['./maze.component.scss'],
-  imports: [CommonModule, FormsModule, LongPressDirective],
+  imports: [CommonModule, FormsModule],
 })
 export class MazeComponent implements OnInit, AfterViewInit {
   row = 8

@@ -1,4 +1,4 @@
-@import '../../../app.theme.scss';
+@use '../../../app.theme.scss' as *;
 
 .game-cy-con {
   width: 100%;

@@ -1,4 +1,4 @@
-@import './app/app.theme.scss';
+@use './app/app.theme.scss' as *;
 
 
 @font-face {

@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { UiAvatarComponent } from '../../ui/ui-avatar/ui-avatar.component'
 import { UiTipArrowDownComponent } from '../../ui/ui-tip-arrow-down/ui-tip-arrow-down.component'
 import { clone, replaceTalk, sampleItem } from '../../../units/Base'
-import { PopChooseComponent } from '../pop-choose/pop-choose.component'
 import { GlobalService } from '../../../services/global.service'
 import { BasicTalkItem, basicFtTalks } from '../../../data/talk-basic'
 import { UiCityBgComponent } from '../../ui/ui-city-bg/ui-city-bg.component'
@@ -11,7 +10,7 @@ import { FightTalkData } from '../../../constants/interfaces/base.interface'
 
 @Component({
   selector: 'jh-pop-talk-ft',
-  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, PopChooseComponent, UiCityBgComponent],
+  imports: [CommonModule, UiAvatarComponent, UiTipArrowDownComponent, UiCityBgComponent],
   templateUrl: './pop-talk-ft.component.html',
   styleUrl: './pop-talk-ft.component.scss',
 })

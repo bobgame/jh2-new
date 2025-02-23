@@ -6,7 +6,6 @@ import { PopMenuComponent } from '../../common/pop/pop-menu/pop-menu.component'
 import { BtnNpcComponent } from '../../common/ui/btn-npc/btn-npc.component'
 import { PopPropsComponent } from '../../common/pop/pop-props/pop-props.component'
 import { CityGroupEnum, PageEnum } from '../../constants/enums/base.enum'
-import { CityNamePipe } from '../../pipes/city-name.pipe'
 import { clone, getKeyByValue, getSSKey, rand, randInt, sampleItem } from '../../units/Base'
 import { RwIdEnum } from '../../constants/enums/rw.enum'
 import { RwItem } from '../../data/rw'
@@ -40,7 +39,6 @@ import { getTimeDay } from '../../units/time'
     BtnNpcComponent,
     PopPropsComponent,
     PopTalkComponent,
-    CityNamePipe,
     UiProgressComponent,
     UiNoticeComponent,
     PopTaskComponent,

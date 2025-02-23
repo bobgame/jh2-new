@@ -25,7 +25,7 @@
       "prefix": "jh",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/jh2",
             "index": "src/index.html",
@@ -50,10 +50,7 @@
             ],
             "allowedCommonJsDependencies": [
               "localforage"
-            ],
-            "customWebpackConfig": {
-              "path": "./custom-webpack.config.js"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -153,7 +150,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "JH2:build:production"
@@ -176,7 +173,7 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "buildTarget": "JH2:build"
           }
