@@ -22,7 +22,7 @@ jobs:
         run: npm ci # 安装项目依赖
 
       - name: Build Angular app
-        run: npm run build --base-href /jh2-new/ # 构建Angular项目
+        run: npm run build:github # 构建Angular项目
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3 # 使用第三方Action部署到GitHub Pages
