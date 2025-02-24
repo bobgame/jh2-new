@@ -2,7 +2,7 @@
 
 江湖贰重制版(JH2new)
 
-[English](README.md) | [简体中文](README_cn.md)
+[English](README_en.md) | [简体中文](README.md)
 
 # Demo
 
