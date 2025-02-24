@@ -28,4 +28,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3 # 使用第三方Action部署到GitHub Pages
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的令牌
-          publish_dir: ./dist/jh2 # 指定要部署的文件夹，<your-project-name>替换为你的项目名
+          publish_dir: ./dist/jh2-new # 指定要部署的文件夹，<your-project-name>替换为你的项目名
