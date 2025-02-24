@@ -4,18 +4,23 @@
 
 [English](README.md) | [简体中文](README_cn.md)
 
+# Demo
+
+### **[在线 Demo](https://bobgame.github.io/jh2new/)**
+
 # 开发服务器
 
 运行 `npm ci` 安装依赖。
-运行 `npm run serve` 启动开发服务器。在浏览器中导航至 `http://localhost:4222/` 。如果修改任何源文件，应用程序将自动重新加载。
+
+运行 `npm run serve` 启动开发服务器。
+
+在浏览器中导航至 [http://localhost:4222/](http://localhost:4222/) 。
+
+如果修改任何源文件，应用程序将自动重新加载。
 
 # 构建
 
 运行 `npm run build` 构建项目。
-
-# 群聊
-
-官方QQ群: 701030167
 
 # 特别感谢
 
@@ -37,7 +42,7 @@
 
 # 联系信息
 
-邮箱：{{ 'bobgame@vip.qq.com' }}
+邮箱：bobgame@vip.qq.com
 
 官方QQ群: 701030167
 

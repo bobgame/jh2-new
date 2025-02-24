@@ -4,18 +4,24 @@
 
 [English](README.md) | [简体中文](README_cn.md)
 
+# Demo
+
+### **[Online Demo](https://bobgame.github.io/jh2new/)**
+
 # Development Server
 
 Run `npm ci` to install dependencies.
-Run `npm run serve` to start the development server. Navigate to `http://localhost:4222/` in your browser. The application will automatically reload if you modify any source files.
+
+Run `npm run serve` to start the development server.
+
+Navigate to [http://localhost:4222/](http://localhost:4222/) in your browser.
+
+The application will automatically reload if you modify any source files.
 
 # Build
 
 Run `npm run build` to build the project.
 
-# Group Chat
-
-Official QQ Group: 701030167
 
 # Special Thanks
 
@@ -23,9 +29,9 @@ Official QQ Group: 701030167
 
 # Thanks
 
-**Zhu Gu Nick** - Provided help with data and chess games!
+**诛估Nick** - Provided help with data and chess games!
 
-**Starry Night's Fantasy**, **Winston Hong**, **Old Man**, **Sima Yilong**, **L** - Conducted careful testing of the remastered version!
+**星夜之幻**、**Winston Hong**、**小老头**、**司马逸龙**、**L** - Conducted careful testing of the remastered version!
 
 # Remastered Version Production
 
@@ -37,7 +43,8 @@ Li Miebai (Lao Bai, Bob Game) from Jianzhi Tian
 
 # Contact Information
 
-Email: {{ 'bobgame@vip.qq.com' }}
+Email: bobgame@vip.qq.com
+
 Official QQ Group: 701030167
 
 # Tribute
