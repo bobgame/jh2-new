@@ -5,7 +5,7 @@
   "description": "Jiang Hu 2 development by BobGame",
   "scripts": {
     "build": "ng build --configuration production",
-    "build:github": "ng build --configuration production --base-href /jh2-new/",
+    "build:github": "ng build --configuration production --base-href ./",
     "build:app": "cordova build android --release",
     "build:dev": "ng build --configuration development",
     "build:prod": "ng build --configuration production",
