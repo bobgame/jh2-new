@@ -11,7 +11,6 @@
     "build:prod": "ng build --configuration production",
     "img": "node ./tools/node-get-path.js",
     "lint": "ng lint --fix=true",
-    "maze": "node ./tools/node-pack-maze.js",
     "ng": "ng",
     "release": "standard-version && git push --follow-tags origin main",
     "serve": "ng serve",
