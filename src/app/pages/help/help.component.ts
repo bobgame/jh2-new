@@ -5,6 +5,7 @@ import { UiBtnBackComponent } from '../../common/ui/ui-btn-back/ui-btn-back.comp
 import { GlobalService } from '../../services/global.service'
 import { PageEnum } from '../../constants/enums/base.enum'
 import { NgScrollbarModule } from 'ngx-scrollbar'
+import packageJson from '../../../../package.json'
 
 @Component({
   selector: 'jh-help',
@@ -17,6 +18,8 @@ export class HelpComponent {
     private g: GlobalService,
     private clipboardService: ClipboardService,
   ) {}
+
+  version = packageJson.version
 
   back() {
     this.g.goToPage(PageEnum.Home)
