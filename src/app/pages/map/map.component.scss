@@ -29,7 +29,7 @@
       transform: translateX(-50%);
       width: 82px;
       height: 43px;
-      background-image: url('/assets/images/map/map-title-bg.png');
+      background-image: url('../../../assets/images/map/map-title-bg.png');
       background-size: 100% 100%;
       display: flex;
       justify-content: center;
@@ -44,7 +44,7 @@
       width: 40px;
       height: 40px;
       background-color: rgba($color: #fff, $alpha: 0.2);
-      background-image: url('/assets/images/map/btn-arrow-left.png');
+      background-image: url('../../../assets/images/map/btn-arrow-left.png');
       background-size: 100% 100%;
       cursor: pointer;
       transition: background 0.3s ease-in-out;
@@ -68,7 +68,7 @@
       left: 0;
       // left: -172px;
       top: 0;
-      background-image: url('/assets/images/map/map-bg.png');
+      background-image: url('../../../assets/images/map/map-bg.png');
       background-size: 100% 100%;
       transition: left 0.3s ease-in-out;
     }
@@ -173,7 +173,7 @@
         transform-origin: 0 0;
         width: 140px;
         height: 145px;
-        background-image: url('/assets/images/map/map-pos.png');
+        background-image: url('../../../assets/images/map/map-pos.png');
         background-size: 100% 100%;
         background-repeat: no-repeat;
         animation: switchMapPosImage 1s steps(2) infinite;
@@ -207,7 +207,7 @@
     height: 50px;
     padding: 5px;
     font-size: 24px;
-    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-image: url('../../../assets/images/choose/choose-bg-sucai.png');
     background-size: 4px 4px;
     background-repeat: repeat;
     display: flex;

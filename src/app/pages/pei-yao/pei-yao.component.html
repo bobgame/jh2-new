@@ -7,7 +7,7 @@
     <div class="item-detail-img-text-con" *ngIf="currentItem">
       <div class="item-detail-img" [style.backgroundColor]="'#a5a4b4'">
         <div class="line">
-          <img class="item-img-wp" src="/assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
+          <img class="item-img-wp" src="assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
         </div>
       </div>
       <div class="item-detail-desc" [class.is-gray]="!currentItem.canPei">
@@ -35,7 +35,7 @@
         [class.is-column-6]="ywItems.length > 30 && ywItems.length <= 36">
         <div class="wp-item" *ngFor="let item of ywItems" (click)="selectItem(item)">
           <div class="img-com" [class.is-selected]="currentItem && currentItem.id === item.id">
-            <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
+            <img class="wp-item-img" src="assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
           </div>
         </div>
         <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
@@ -59,7 +59,7 @@
         <div class="item-list">
           <div class="wp-item" *ngFor="let itemId of topCyItemIds" (click)="removeTopCyItem(itemId)">
             <div class="img-com">
-              <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ itemId }}.png" />
+              <img class="wp-item-img" src="assets/images/avatar/wp/wp-{{ itemId }}.png" />
             </div>
           </div>
           <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
@@ -79,7 +79,7 @@
       <div class="item-list">
         <div class="wp-item" *ngFor="let itemId of cyItems" (click)="selectCyItem(itemId)">
           <div class="img-com">
-            <img class="wp-item-img" src="/assets/images/avatar/wp/wp-{{ itemId }}.png" />
+            <img class="wp-item-img" src="assets/images/avatar/wp/wp-{{ itemId }}.png" />
           </div>
         </div>
         <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>
@@ -91,7 +91,7 @@
       <div class="card-detail-img-text-con">
         <div class="card-detail-img" [style.backgroundColor]="'#a5a4b4'">
           <div class="line">
-            <img class="card-img-wp" src="/assets/images/avatar/wp/wp-{{ result.img }}.png" />
+            <img class="card-img-wp" src="assets/images/avatar/wp/wp-{{ result.img }}.png" />
           </div>
         </div>
         <div class="card-detail-desc">

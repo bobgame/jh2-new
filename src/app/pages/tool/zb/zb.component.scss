@@ -17,14 +17,14 @@
     width: 360px;
     height: 64px;
     padding: 5px;
-    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-image: url('../../../../assets/images/choose/choose-bg-sucai.png');
     background-size: 4px 4px;
     background-repeat: repeat;
 
     .title-con {
       width: 344px;
       height: 48px;
-      background-image: url('/assets/images/choose/choose-title-bg.png');
+      background-image: url('../../../../assets/images/choose/choose-title-bg.png');
       background-size: 100% 100%;
       display: flex;
       align-items: center;
@@ -110,7 +110,7 @@
           width: 46px;
           height: 46px;
           box-sizing: border-box;
-          background-image: url('/assets/images/avatar/jn/jn-not-get.png');
+          background-image: url('../../../../assets/images/avatar/jn/jn-not-get.png');
           background-size: 100% 100%;
           border: 1px solid $borderActiveColor;
           position: relative;

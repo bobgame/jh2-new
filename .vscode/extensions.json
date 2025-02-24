@@ -2,6 +2,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": [
     "esbenp.prettier-vscode",
-    "vismalietuva.vscode-angular-support"
+    "vismalietuva.vscode-angular-support",
+    "angular.ng-template"
   ]
 }

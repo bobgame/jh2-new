@@ -2,13 +2,13 @@
   <div class="city">
     <img
       *ngIf="g.current.cityGroup === CityGroupEnum.Normal || g.current.cityGroup === CityGroupEnum.QiTao; else notNormalImage"
-      src="/assets/images/dt/dt-{{ g.current.city.img }}.png"
+      src="assets/images/dt/dt-{{ g.current.city.img }}.png"
       alt="" />
     <ng-template #notNormalImage>
-      <img src="/assets/images/dt/dt-{{ citySheShiImages[g.current.cityGroup] }}.png" alt="" />
+      <img src="assets/images/dt/dt-{{ citySheShiImages[g.current.cityGroup] }}.png" alt="" />
     </ng-template>
     <div class="city-name">
-      <div class="label">{{ g.current.city.name | cityName : g.current.cityGroup }}</div>
+      <div class="label">{{ g.current.city.name | cityName: g.current.cityGroup }}</div>
       <div class="title-side side-top"></div>
       <div class="title-side side-bottom"></div>
     </div>

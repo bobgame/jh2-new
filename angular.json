@@ -27,30 +27,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jh2",
+            "outputPath": "dist/jh2-new",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/pre/pre-fetch.css",
-              "src/styles.scss"
-            ],
-            "scripts": [
-              "src/pre/pre-img-src.js",
-              "src/pre/bd-hm.js",
-              "src/pre/pre-fetch.js"
-            ],
-            "allowedCommonJsDependencies": [
-              "localforage"
-            ]
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/pre/pre-fetch.css", "src/styles.scss"],
+            "scripts": ["src/pre/pre-img-src.js", "src/pre/pre-fetch.js"],
+            "allowedCommonJsDependencies": ["localforage"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            }
           },
           "configurations": {
             "production": {
@@ -181,19 +170,14 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ],
+    "schematicCollections": ["@angular-eslint/schematics"],
     "analytics": false
   }
 }

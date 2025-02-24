@@ -31,7 +31,7 @@
         top: 0;
         width: 72px;
         height: 109px;
-        background-image: url('/assets/images/fight/rw-card-bg.png');
+        background-image: url('../../../assets/images/fight/rw-card-bg.png');
         background-size: 100% 100%;
         filter: drop-shadow(2px 2px 0px #b49b63);
 
@@ -131,7 +131,7 @@
     }
 
     .fight-bg-1 {
-      background-image: url('/assets/images/fight/fight-bg.png');
+      background-image: url('../../../assets/images/fight/fight-bg.png');
       z-index: 1;
     }
 
@@ -201,14 +201,14 @@
     .hero-fight-con {
       &.hero-fight-con-1 {
         .status {
-          background-image: url('/assets/images/fight/fight-man.png');
+          background-image: url('../../../assets/images/fight/fight-man.png');
         }
 
       }
 
       &.hero-fight-con-2 {
         .status {
-          background-image: url('/assets/images/fight/fight-woman.png');
+          background-image: url('../../../assets/images/fight/fight-woman.png');
           transform: scaleX(-1);
         }
       }
@@ -225,14 +225,14 @@
 
       &.npc-fight-con-1 {
         .status {
-          background-image: url('/assets/images/fight/fight-man.png');
+          background-image: url('../../../assets/images/fight/fight-man.png');
           transform: scaleX(-1);
         }
       }
 
       &.npc-fight-con-2 {
         .status {
-          background-image: url('/assets/images/fight/fight-woman.png');
+          background-image: url('../../../assets/images/fight/fight-woman.png');
         }
       }
     }
@@ -245,7 +245,7 @@
       width: 59px;
       height: 7px;
       opacity: 0;
-      background-image: url('/assets/images/fight/fight-anim-point.png');
+      background-image: url('../../../assets/images/fight/fight-anim-point.png');
       background-size: 100% 100%;
       z-index: 3;
 

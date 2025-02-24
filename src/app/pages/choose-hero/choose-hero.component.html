@@ -10,7 +10,7 @@
       <div class="hero-item" [class.selected]="hero.id === currentHero.id" *ngFor="let hero of heroes" (click)="selectHero(hero)">
         <div class="hero-picture">
           <div class="picture-line"></div>
-          <img src="/assets/images/avatar/zj/zj-{{ hero.isActive ? hero.avatar : 'not-get' }}.png" alt="" srcset="" />
+          <img src="assets/images/avatar/zj/zj-{{ hero.isActive ? hero.avatar : 'not-get' }}.png" alt="" srcset="" />
         </div>
       </div>
     </div>

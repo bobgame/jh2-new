@@ -10,20 +10,20 @@
   <div class="dl-con">
     <div class="dl-control-con">
       <div class="dl-control-item" *ngFor="let hua of gzList" (click)="huaClick(hua)">
-        <div class="img-con" [class.is-active]="hua.id === activeGz.id"
-          [style.backgroundImage]="'url(/assets/images/hua/' + hua.img + '.png)'">
-        </div>
+        <div
+          class="img-con"
+          [class.is-active]="hua.id === activeGz.id"
+          [style.backgroundImage]="'url(assets/images/hua/' + hua.img + '.png)'"></div>
       </div>
     </div>
     <div class="bottom-show">
       <div class="arrow-con">
-        <div class="label">步数：<b>{{step}}</b></div>
+        <div class="label">
+          步数：<b>{{ step }}</b>
+        </div>
       </div>
     </div>
   </div>
-  <div class="result-con" *ngIf="showDlResult" (click)="closeResult()">
-    得分：{{resultScore}}
-  </div>
+  <div class="result-con" *ngIf="showDlResult" (click)="closeResult()">得分：{{ resultScore }}</div>
 </div>
-<jh-pop-choose *ngIf="showChoose" [title]="exitQa.question" [answers]="exitQa.answers"
-  (itemClick)="exitAnswer($event)"></jh-pop-choose>
+<jh-pop-choose *ngIf="showChoose" [title]="exitQa.question" [answers]="exitQa.answers" (itemClick)="exitAnswer($event)"></jh-pop-choose>

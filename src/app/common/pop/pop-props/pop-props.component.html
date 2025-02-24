@@ -56,7 +56,7 @@
         [class.is-selected]="selectedJnItem.key === jnItem.key"
         *ngFor="let jnItem of jnItems"
         (click)="selectJnItem(jnItem)"
-        [style.backgroundImage]="'url(/assets/images/avatar/jn/jn-' + (jnItem.active ? jnItem.img : 'not-get') + '.png)'"></div>
+        [style.backgroundImage]="'url(assets/images/avatar/jn/jn-' + (jnItem.active ? jnItem.img : 'not-get') + '.png)'"></div>
       <div class="jineng-name">{{ selectedJnItem.name }}</div>
     </div>
   </div>

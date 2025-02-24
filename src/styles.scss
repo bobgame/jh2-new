@@ -3,21 +3,21 @@
 
 @font-face {
   font-family: 'YSYRXK';
-  src: url('/assets/fonts/YSYRXK.ttf');
+  src: url('~/assets/fonts/YSYRXK.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'LXGWWK';
-  src: url('/assets/fonts/lxgwwk.ttf');
+  src: url('~/assets/fonts/lxgwwk.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SEGOEUI';
-  src: url('/assets/fonts/segoeui.ttf');
+  src: url('~/assets/fonts/segoeui.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -165,7 +165,7 @@ img {
   justify-content: center;
 
   .text {
-    background-image: url('/assets/images/choose/choose-bg-sucai.png');
+    background-image: url('~/assets/images/choose/choose-bg-sucai.png');
     background-size: 4px 4px;
     background-repeat: repeat;
     border: 3px solid $borderColor;

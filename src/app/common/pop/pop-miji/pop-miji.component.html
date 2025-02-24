@@ -39,7 +39,7 @@
         <div class="item-list is-column-5" [class.is-column-6]="items.length > 30 && items.length <= 36">
           <div class="wp-item" *ngFor="let item of items" (click)="selectItem(item)">
             <div class="img-com" [class.is-selected]="currentItem && currentItem.id === item.id">
-              <img class="wp-item-img" src="/assets/images/avatar/mj/mj-{{ item.avatar }}.png" />
+              <img class="wp-item-img" src="assets/images/avatar/mj/mj-{{ item.avatar }}.png" />
             </div>
           </div>
           <div class="wp-item wp-empty" *ngFor="let empty of emptyItems"></div>

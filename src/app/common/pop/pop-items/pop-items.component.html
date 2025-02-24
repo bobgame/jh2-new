@@ -38,9 +38,9 @@
             <img
               class="item-img-wp"
               *ngIf="currentCategory.in === 'wp'; else zbAvatar"
-              src="/assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
+              src="assets/images/avatar/wp/wp-{{ currentItem.avatar }}.png" />
             <ng-template #zbAvatar>
-              <img class="item-img-wp" src="/assets/images/avatar/zb/zb-{{ currentItem.avatar }}.png" />
+              <img class="item-img-wp" src="assets/images/avatar/zb/zb-{{ currentItem.avatar }}.png" />
             </ng-template>
           </div>
         </div>
@@ -95,9 +95,9 @@
               <img
                 class="wp-item-img"
                 *ngIf="currentCategory.in === 'wp'; else zbItemAvatar"
-                src="/assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
+                src="assets/images/avatar/wp/wp-{{ item.avatar }}.png" />
               <ng-template #zbItemAvatar>
-                <img class="wp-item-img" src="/assets/images/avatar/zb/zb-{{ item.avatar }}.png" />
+                <img class="wp-item-img" src="assets/images/avatar/zb/zb-{{ item.avatar }}.png" />
               </ng-template>
             </div>
           </div>
