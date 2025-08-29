@@ -6,7 +6,7 @@
 
 # Demo
 
-### **[在线 Demo](https://bobgame.github.io/jh2new/)**
+### **[在线 Demo](https://bobgame.github.io/jh2-new/)**
 
 # 开发服务器
 
