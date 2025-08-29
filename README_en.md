@@ -6,7 +6,7 @@
 
 # Demo
 
-### **[Online Demo](https://bobgame.github.io/jh2new/)**
+### **[Online Demo](https://bobgame.github.io/jh2-new/)**
 
 # Development Server
 
